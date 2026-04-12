@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIP GRATIS LIFETIME — Alpha Crypto 369</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #F0B429;
+    --gold-dim: #C9922A;
+    --cyan: #00D4FF;
+    --green: #00E5A0;
+    --red: #FF4560;
+    --bg: #080B0F;
+    --bg2: #0D1117;
+    --bg3: #131920;
+    --border: rgba(240,180,41,0.15);
+    --text: #E8EDF2;
+    --muted: #6B7685;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+    cursor: default;
+  }
+
+  /* GRAIN OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  /* GRID LINES */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(240,180,41,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(240,180,41,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── NAVBAR ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    background: rgba(8,11,15,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 3px;
+    color: var(--gold);
+  }
+
+  .nav-logo span { color: var(--text); }
+
+  .nav-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--green);
+    border: 1px solid var(--green);
+    padding: 4px 10px;
+    border-radius: 2px;
+    animation: pulse-border 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-border {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(0,229,160,0.3); }
+    50% { box-shadow: 0 0 0 6px rgba(0,229,160,0); }
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 24px 80px;
+    text-align: center;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .hero-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(240,180,41,0.08) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .hero-glow-2 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(0,212,255,0.05) 0%, transparent 70%);
+    top: 30%;
+    right: 10%;
+    pointer-events: none;
+  }
+
+  .hero-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(64px, 14vw, 120px);
+    line-height: 0.9;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.4s forwards;
+  }
+
+  .hero-title .line1 { color: var(--text); display: block; }
+  .hero-title .line2 { 
+    color: var(--gold); 
+    display: block;
+    -webkit-text-stroke: 1px var(--gold);
+  }
+  .hero-title .line3 { 
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(240,180,41,0.4);
+    display: block;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    color: var(--muted);
+    font-weight: 300;
+    margin: 24px 0 40px;
+    max-width: 480px;
+    line-height: 1.6;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.6s forwards;
+  }
+
+  .hero-sub strong { color: var(--text); font-weight: 500; }
+
+  .hero-cta-group {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.8s forwards;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold);
+    color: #080B0F;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 14px 28px;
+    border-radius: 3px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    background: #FFD060;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(240,180,41,0.35);
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 14px 28px;
+    border-radius: 3px;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.15);
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    transform: translateY(-2px);
+  }
+
+  /* STATS BAR */
+  .stats-bar {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin: 60px 24px 0;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 1s forwards;
+  }
+
+  .stat-item {
+    flex: 1;
+    padding: 20px 24px;
+    text-align: center;
+    background: var(--bg2);
+    border-right: 1px solid var(--border);
+    position: relative;
+  }
+
+  .stat-item:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: var(--gold);
+    line-height: 1;
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 4px;
+    display: block;
+  }
+
+  /* ── SECTION COMMONS ── */
+  section {
+    position: relative;
+    z-index: 1;
+    padding: 80px 24px;
+  }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 6vw, 56px);
+    line-height: 1;
+    letter-spacing: 1px;
+    margin-bottom: 48px;
+  }
+
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  /* ── BENEFITS ── */
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+
+  .benefit-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 28px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+
+  .benefit-card:hover {
+    border-color: rgba(240,180,41,0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+  }
+
+  .benefit-card:hover::before { transform: scaleX(1); }
+
+  .benefit-icon {
+    font-size: 28px;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .benefit-title {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .benefit-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ── EXCHANGES ── */
+  .exchanges-section {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .exchange-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+
+  .exchange-card {
+    border-radius: 6px;
+    padding: 32px;
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .exchange-card.bybit {
+    background: linear-gradient(135deg, #0D1117 0%, #131920 100%);
+    border: 1px solid rgba(240,180,41,0.3);
+  }
+
+  .exchange-card.mexc {
+    background: linear-gradient(135deg, #0D1117 0%, #131920 100%);
+    border: 1px solid rgba(0,212,255,0.3);
+  }
+
+  .exchange-card.xt {
+    background: linear-gradient(135deg, #0D1117 0%, #131920 100%);
+    border: 1px solid rgba(255,165,0,0.2);
+  }
+
+  .exchange-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+
+  .exchange-card.bybit:hover { box-shadow: 0 20px 60px rgba(240,180,41,0.15); }
+  .exchange-card.mexc:hover { box-shadow: 0 20px 60px rgba(0,212,255,0.12); }
+
+  .exchange-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 3px;
+    margin-bottom: 4px;
+  }
+
+  .exchange-card.bybit .exchange-name { color: var(--gold); }
+  .exchange-card.mexc .exchange-name { color: var(--cyan); }
+  .exchange-card.xt .exchange-name { color: #FFA500; }
+
+  .exchange-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .exchange-features {
+    list-style: none;
+    margin-bottom: 28px;
+  }
+
+  .exchange-features li {
+    font-size: 13px;
+    color: #9BA8B5;
+    padding: 6px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .exchange-features li::before {
+    content: '✦';
+    font-size: 8px;
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .exchange-card.mexc .exchange-features li::before { color: var(--cyan); }
+
+  .exchange-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+  }
+
+  .exchange-card.bybit .exchange-btn {
+    background: var(--gold);
+    color: #080B0F;
+  }
+
+  .exchange-card.mexc .exchange-btn {
+    background: var(--cyan);
+    color: #080B0F;
+  }
+
+  .exchange-card.xt .exchange-btn {
+    background: rgba(255,165,0,0.15);
+    color: #FFA500;
+    border: 1px solid rgba(255,165,0,0.3);
+  }
+
+  /* ── STEPS ── */
+  .steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+
+  .steps-list::before {
+    content: '';
+    position: absolute;
+    left: 23px;
+    top: 24px;
+    bottom: 24px;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+  }
+
+  .step-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px 0;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.5s;
+  }
+
+  .step-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .step-num {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid var(--gold);
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: var(--gold);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-content { padding-top: 10px; }
+
+  .step-title {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .step-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ── NOTE BOX ── */
+  .note-box {
+    background: rgba(240,180,41,0.06);
+    border: 1px solid rgba(240,180,41,0.2);
+    border-left: 3px solid var(--gold);
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin-top: 32px;
+    font-size: 13px;
+    color: #B8A678;
+    line-height: 1.6;
+  }
+
+  .note-box strong { color: var(--gold); }
+
+  /* ── CTA FINAL ── */
+  .cta-section {
+    text-align: center;
+    background: linear-gradient(135deg, var(--bg2), var(--bg3));
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .cta-section .section-title { margin-bottom: 16px; }
+
+  .cta-sub {
+    color: var(--muted);
+    font-size: 15px;
+    margin-bottom: 40px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 32px 24px;
+    border-top: 1px solid var(--border);
+  }
+
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .footer-text {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* ── FLOATING CTA ── */
+  .floating-cta {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    z-index: 200;
+    display: flex;
+    gap: 10px;
+    background: rgba(8,11,15,0.92);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 10px 10px 10px 20px;
+    align-items: center;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+    white-space: nowrap;
+  }
+
+  .floating-cta.show {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .floating-label {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .floating-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--gold);
+    color: #080B0F;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 10px 20px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .floating-btn:hover {
+    background: #FFD060;
+    box-shadow: 0 4px 20px rgba(240,180,41,0.4);
+  }
+
+  .floating-btn-2 {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0,212,255,0.15);
+    color: var(--cyan);
+    font-weight: 600;
+    font-size: 13px;
+    padding: 10px 20px;
+    border-radius: 100px;
+    text-decoration: none;
+    border: 1px solid rgba(0,212,255,0.3);
+    transition: all 0.2s;
+  }
+
+  .floating-btn-2:hover {
+    background: rgba(0,212,255,0.25);
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* LIVE TICKER */
+  .ticker-strip {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    background: rgba(240,180,41,0.05);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 0;
+  }
+
+  .ticker-inner {
+    display: flex;
+    gap: 60px;
+    animation: ticker 30s linear infinite;
+    white-space: nowrap;
+  }
+
+  .ticker-item {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    flex-shrink: 0;
+  }
+
+  .ticker-item span { color: var(--gold); }
+  .ticker-item .up { color: var(--green); }
+  .ticker-item .dn { color: var(--red); }
+
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ── CONFIRM BOX ── */
+  .confirm-box {
+    margin-top: 48px;
+    background: linear-gradient(135deg, rgba(0,212,255,0.05), rgba(0,229,160,0.05));
+    border: 1px solid rgba(0,212,255,0.25);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .confirm-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--cyan), var(--green), var(--cyan));
+    background-size: 200% 100%;
+    animation: shimmer 3s linear infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  .confirm-inner {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 32px;
+  }
+
+  .confirm-icon {
+    font-size: 40px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 12px rgba(0,212,255,0.4));
+  }
+
+  .confirm-content { flex: 1; }
+
+  .confirm-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    letter-spacing: 1px;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .confirm-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .confirm-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #0088CC, #00AAEE);
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 14px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.25s;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 20px rgba(0,136,204,0.3);
+  }
+
+  .confirm-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0,136,204,0.5);
+    background: linear-gradient(135deg, #0099DD, #00BBFF);
+  }
+
+  .confirm-badge {
+    flex-shrink: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: var(--green);
+    border: 1px solid var(--green);
+    padding: 10px 14px;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 1.4;
+    animation: pulse-border 2s ease-in-out infinite;
+  }
+
+  /* MOBILE */
+  @media (max-width: 600px) {
+    nav { padding: 14px 20px; }
+    .floating-cta { bottom: 16px; padding: 8px 8px 8px 16px; }
+    .floating-label { display: none; }
+    .stat-num { font-size: 24px; }
+    .stat-item { padding: 16px 12px; }
+    .steps-list::before { left: 23px; }
+    .exchange-cards { grid-template-columns: 1fr; }
+    .confirm-inner { flex-direction: column; text-align: center; gap: 16px; }
+    .confirm-badge { align-self: center; }
+    .confirm-btn { font-size: 13px; padding: 12px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">ALPHA CRYPTO <span>369</span></div>
+  <div class="nav-badge">⬤ VIP SLOT TERBUKA</div>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker-strip" style="margin-top:57px">
+  <div class="ticker-inner">
+    <span class="ticker-item">BTC <span class="up">▲ +2.4%</span></span>
+    <span class="ticker-item">ETH <span class="up">▲ +1.8%</span></span>
+    <span class="ticker-item">VIP GRATIS <span>100%</span></span>
+    <span class="ticker-item">BYBIT REFERRAL <span>AKTIF</span></span>
+    <span class="ticker-item">MEXC REFERRAL <span>AKTIF</span></span>
+    <span class="ticker-item">FUTURES SETUP <span>SMC/ICT</span></span>
+    <span class="ticker-item">ON-CHAIN <span>LIVE</span></span>
+    <span class="ticker-item">ANALISA PAGI <span>SETIAP HARI</span></span>
+    <!-- duplicate for seamless loop -->
+    <span class="ticker-item">BTC <span class="up">▲ +2.4%</span></span>
+    <span class="ticker-item">ETH <span class="up">▲ +1.8%</span></span>
+    <span class="ticker-item">VIP GRATIS <span>100%</span></span>
+    <span class="ticker-item">BYBIT REFERRAL <span>AKTIF</span></span>
+    <span class="ticker-item">MEXC REFERRAL <span>AKTIF</span></span>
+    <span class="ticker-item">FUTURES SETUP <span>SMC/ICT</span></span>
+    <span class="ticker-item">ON-CHAIN <span>LIVE</span></span>
+    <span class="ticker-item">ANALISA PAGI <span>SETIAP HARI</span></span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
+
+  <div class="hero-tag">Alpha Crypto 369 — VIP Exclusive</div>
+
+  <h1 class="hero-title">
+    <span class="line1">VIP</span>
+    <span class="line2">GRATIS</span>
+    <span class="line3">LIFETIME</span>
+  </h1>
+
+  <p class="hero-sub">
+    Daftar exchange lewat link kami → <strong>akses VIP langsung aktif.</strong><br>
+    Tidak ada biaya bulanan. Modal tetap 100% di akun kamu.
+  </p>
+
+  <div class="hero-cta-group">
+    <a href="#exchanges" class="btn-primary">⚡ Daftar Sekarang — Gratis</a>
+    <a href="#cara-daftar" class="btn-outline">Lihat Cara Kerja →</a>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat-item">
+      <span class="stat-num">100%</span>
+      <span class="stat-label">Gratis Forever</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">7</span>
+      <span class="stat-label">Langkah Daftar</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">3+</span>
+      <span class="stat-label">Exchange Pilihan</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">24/7</span>
+      <span class="stat-label">Akses Konten VIP</span>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section>
+  <div class="container">
+    <div class="section-label">// apa yang kamu dapat</div>
+    <h2 class="section-title">BENEFIT VIP EXCLUSIVE</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <span class="benefit-icon">📊</span>
+        <div class="benefit-title">Daily Market Outlook</div>
+        <p class="benefit-desc">Analisa pagi sebelum market bergerak. Setup BTC, ETH, altcoin terpilih setiap hari.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">📐</span>
+        <div class="benefit-title">Setup Futures Terpilih</div>
+        <p class="benefit-desc">Hanya setup berkualitas tinggi berbasis SMC/ICT. Entry, TP, SL sudah terdefinisi jelas.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">🧠</span>
+        <div class="benefit-title">Insight Profesional</div>
+        <p class="benefit-desc">On-chain data, derivatives analysis, macro crypto reading. Level hedge fund analyst.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">🔒</span>
+        <div class="benefit-title">Modal Aman di Akun Kamu</div>
+        <p class="benefit-desc">Tidak ada yang dibayarkan ke kami. Modal trading 100% tetap di akun exchange kamu sendiri.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- EXCHANGES -->
+<section class="exchanges-section" id="exchanges">
+  <div class="container">
+    <div class="section-label">// pilih exchange kamu</div>
+    <h2 class="section-title">DAFTAR LEWAT LINK RESMI</h2>
+    <div class="exchange-cards">
+
+      <!-- BYBIT -->
+      <div class="exchange-card bybit">
+        <div class="exchange-name">BYBIT</div>
+        <div class="exchange-tag">🔷 GLOBAL · RECOMMENDED</div>
+        <ul class="exchange-features">
+          <li>Zero Fee Trading</li>
+          <li>Cocok untuk Futures &amp; Spot</li>
+          <li>Interface paling clean &amp; cepat</li>
+          <li>Likuiditas tinggi, spread ketat</li>
+        </ul>
+        <a href="https://partner.bybit-global.com/b/369global" target="_blank" class="exchange-btn">
+          <span>DAFTAR BYBIT SEKARANG</span>
+          <span>→</span>
+        </a>
+      </div>
+
+      <!-- MEXC -->
+      <div class="exchange-card mexc">
+        <div class="exchange-name">MEXC</div>
+        <div class="exchange-tag">🔶 GLOBAL · ALTCOIN HUNTER</div>
+        <ul class="exchange-features">
+          <li>Listing altcoin terlengkap</li>
+          <li>Cocok untuk early gem hunting</li>
+          <li>Fee kompetitif &amp; low minimum</li>
+          <li>Spot &amp; Futures tersedia</li>
+        </ul>
+        <a href="https://www.mexc.fm/id-ID/acquisition/custom-sign-up?shareCode=mexc-1JoSs" target="_blank" class="exchange-btn">
+          <span>DAFTAR MEXC SEKARANG</span>
+          <span>→</span>
+        </a>
+      </div>
+
+      <!-- XT -->
+      <div class="exchange-card xt">
+        <div class="exchange-name">XT.COM</div>
+        <div class="exchange-tag">⚡ BERKEMBANG CEPAT</div>
+        <ul class="exchange-features">
+          <li>Exchange berkembang pesat</li>
+          <li>Early listing peluang tinggi</li>
+          <li>Alternatif diversifikasi exchange</li>
+        </ul>
+        <div class="exchange-btn" style="cursor:default; opacity:0.6;">
+          <span>COMING SOON</span>
+          <span>—</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="note-box">
+      <strong>⚠️ Note:</strong> Jika link tidak bisa dibuka, disarankan menggunakan VPN sementara saat registrasi. Setelah akun aktif, VPN tidak diperlukan lagi.
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section id="cara-daftar">
+  <div class="container">
+    <div class="section-label">// panduan lengkap</div>
+    <h2 class="section-title">LANGKAH PENDAFTARAN</h2>
+    <div class="steps-list" id="stepsList">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <div class="step-title">Pilih Exchange</div>
+          <p class="step-desc">Pilih Bybit atau MEXC di atas sesuai kebutuhan trading kamu. Bisa daftar keduanya untuk akses VIP lebih luas.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <div class="step-title">Daftar Lewat Link Resmi Kami</div>
+          <p class="step-desc">Wajib menggunakan link di halaman ini agar sistem kami dapat memverifikasi pendaftaran kamu secara otomatis.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <div class="step-title">Selesaikan KYC</div>
+          <p class="step-desc">Verifikasi identitas (KYC Level 1) di exchange yang dipilih. Proses biasanya selesai dalam beberapa menit.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <div class="step-title">Deposit Modal Trading</div>
+          <p class="step-desc">Deposit modal awal ke akun exchange. Jumlah bebas sesuai kemampuan — ini modal trading kamu sendiri, bukan biaya ke kami.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <div class="step-title">Screenshot Bukti Registrasi</div>
+          <p class="step-desc">Screenshot tampilan akun exchange yang menunjukkan kamu sudah terdaftar dan KYC selesai.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">6</div>
+        <div class="step-content">
+          <div class="step-title">DM ke @soloadmin369</div>
+          <p class="step-desc">Kirim screenshot bukti registrasi ke admin kami di Telegram. Sertakan nama exchange yang didaftar.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">7</div>
+        <div class="step-content">
+          <div class="step-title">VIP Lifetime Langsung Aktif ✅</div>
+          <p class="step-desc">Setelah diverifikasi, akses VIP Exclusive kamu langsung aktif seumur hidup. Tanpa biaya bulanan. Selamanya.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- KONFIRMASI ADMIN BOX -->
+    <div class="confirm-box">
+      <div class="confirm-inner">
+        <div class="confirm-icon">💬</div>
+        <div class="confirm-content">
+          <div class="confirm-title">Sudah Daftar? Konfirmasi ke Admin</div>
+          <p class="confirm-desc">Kirim screenshot bukti registrasi exchange kamu langsung ke admin via Telegram. VIP aktif dalam hitungan menit.</p>
+          <a href="https://t.me/soloadmin369" target="_blank" class="confirm-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.04 9.613c-.148.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.48 14.617l-2.95-.924c-.641-.2-.653-.641.136-.949l11.532-4.448c.533-.194 1.001.13.364.952z"/></svg>
+            Chat Admin Sekarang — @soloadmin369
+          </a>
+        </div>
+        <div class="confirm-badge">RESPON<br>CEPAT</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section">
+  <div class="container">
+    <div class="section-label">// mulai sekarang</div>
+    <h2 class="section-title">SIAP TRADING LEBIH CERDAS?</h2>
+    <p class="cta-sub">Ribuan trader sudah memanfaatkan analisa VIP ini. Giliran kamu.</p>
+    <div class="cta-buttons">
+      <a href="https://partner.bybit-global.com/b/369global" target="_blank" class="btn-primary">🔷 Daftar via Bybit</a>
+      <a href="https://www.mexc.fm/id-ID/acquisition/custom-sign-up?shareCode=mexc-1JoSs" target="_blank" class="btn-outline">🔶 Daftar via MEXC</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">ALPHA CRYPTO 369</div>
+  <p class="footer-text">trading everyday with Alpha Crypto 369 VIP EXCLUSIVE · @soloadmin369</p>
+</footer>
+
+<!-- FLOATING CTA -->
+<div class="floating-cta" id="floatingCta">
+  <span class="floating-label">Daftar VIP Gratis →</span>
+  <a href="https://partner.bybit-global.com/b/369global" target="_blank" class="floating-btn">🔷 Bybit</a>
+  <a href="https://www.mexc.fm/id-ID/acquisition/custom-sign-up?shareCode=mexc-1JoSs" target="_blank" class="floating-btn-2">🔶 MEXC</a>
+</div>
+
+<script>
+  // Floating CTA appear on scroll
+  const floatingCta = document.getElementById('floatingCta');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      floatingCta.classList.add('show');
+    } else {
+      floatingCta.classList.remove('show');
+    }
+  });
+
+  // Step items scroll reveal
+  const stepItems = document.querySelectorAll('.step-item');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  stepItems.forEach(item => observer.observe(item));
+
+  // Animate counters
+  function animateCounter(el, target, suffix = '') {
+    let start = 0;
+    const duration = 1500;
+    const step = (timestamp) => {
+      if (!start) start = timestamp;
+      const progress = Math.min((timestamp - start) / duration, 1);
+      const value = Math.floor(progress * target);
+      el.textContent = value + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+</script>
+</body>
+</html>
