@@ -731,6 +731,282 @@
     to { transform: translateX(-50%); }
   }
 
+  /* ── ROI SECTION ── */
+  .roi-section {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 80px 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .roi-scroll { overflow-x: auto; padding-bottom: 12px; }
+  .roi-scroll::-webkit-scrollbar { height: 3px; }
+  .roi-scroll::-webkit-scrollbar-track { background: var(--bg); }
+  .roi-scroll::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+  .roi-cards {
+    display: flex;
+    gap: 16px;
+    min-width: max-content;
+    padding: 4px 2px;
+  }
+
+  .roi-card {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 24px 28px;
+    width: 220px;
+    flex-shrink: 0;
+    transition: all 0.3s;
+  }
+
+  .roi-card:hover {
+    border-color: rgba(240,180,41,0.35);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+  }
+
+  .roi-card.live { border-color: rgba(0,229,160,0.3); }
+  .roi-card.highlight { border-color: rgba(240,180,41,0.5); background: rgba(240,180,41,0.04); }
+  .roi-card.cta-card { background: rgba(240,180,41,0.03); border-color: rgba(240,180,41,0.2); width: 240px; }
+
+  .roi-month {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .live-dot {
+    color: var(--green);
+    font-size: 9px;
+    animation: pulse-border 1.5s ease-in-out infinite;
+  }
+
+  .roi-pct {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    line-height: 1;
+    color: var(--green);
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+  }
+
+  .roi-pct.running {
+    font-size: 32px;
+    color: var(--muted);
+    letter-spacing: 1px;
+  }
+
+  .roi-pct.gold { color: var(--gold); }
+
+  .roi-detail {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+
+  .roi-detail strong { color: var(--text); }
+
+  .roi-best {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--gold);
+    opacity: 0.7;
+  }
+
+  .roi-disclaimer {
+    margin-top: 24px;
+    font-size: 11px;
+    color: var(--muted);
+    background: rgba(255,180,0,0.04);
+    border-left: 2px solid rgba(240,180,41,0.3);
+    padding: 10px 14px;
+    border-radius: 0 3px 3px 0;
+    line-height: 1.6;
+  }
+
+  /* ── MEMBER RESULTS ── */
+  .results-section {
+    padding: 80px 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+
+  .result-card {
+    background: var(--bg2);
+    border: 1px solid rgba(0,229,160,0.15);
+    border-radius: 6px;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+
+  .result-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--green), transparent);
+  }
+
+  .result-card:hover {
+    border-color: rgba(0,229,160,0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0,229,160,0.08);
+  }
+
+  .result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .result-pair {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 1px;
+  }
+
+  .result-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--green);
+    border: 1px solid rgba(0,229,160,0.35);
+    padding: 3px 8px;
+    border-radius: 2px;
+  }
+
+  .result-roi {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 56px;
+    color: var(--green);
+    line-height: 1;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+    filter: drop-shadow(0 0 20px rgba(0,229,160,0.3));
+  }
+
+  .result-meta {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 12px;
+  }
+
+  .result-meta span {
+    font-size: 11px;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .result-meta strong { color: var(--text); }
+
+  .result-member {
+    font-size: 11px;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 10px;
+    margin-top: 4px;
+  }
+
+  /* ── ONCHAIN ── */
+  .onchain-section {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 80px 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .onchain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .onchain-card {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 24px;
+    transition: all 0.3s;
+  }
+
+  .onchain-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  }
+
+  .onchain-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+
+  .onchain-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    line-height: 1;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+  }
+
+  .onchain-val.teal { color: var(--green); }
+  .onchain-val.gold { color: var(--gold); }
+
+  .onchain-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    padding: 3px 8px;
+    border-radius: 2px;
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+
+  .teal-tag { background: rgba(0,229,160,0.1); color: var(--green); border: 1px solid rgba(0,229,160,0.25); }
+  .gold-tag { background: rgba(240,180,41,0.1); color: var(--gold); border: 1px solid rgba(240,180,41,0.25); }
+  .blue-tag { background: rgba(0,212,255,0.1); color: var(--cyan); border: 1px solid rgba(0,212,255,0.25); }
+
+  .onchain-desc {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  .onchain-footer {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    text-align: center;
+    padding: 14px 20px;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    letter-spacing: 2px;
+  }
+
   /* ── COPY MSG BOX ── */
   .copy-msg-box {
     background: rgba(8,11,15,0.8);
@@ -1001,6 +1277,167 @@
         <p class="benefit-desc">Tidak ada yang dibayarkan ke kami. Modal trading 100% tetap di akun exchange kamu sendiri.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ROI BULANAN -->
+<section class="roi-section">
+  <div class="container">
+    <div class="section-label">// performa bulanan · track record verified</div>
+    <h2 class="section-title">ROI Per Bulan.<br><span style="color:var(--gold)">200%++ Konsisten.</span></h2>
+    <div class="roi-scroll">
+      <div class="roi-cards">
+
+        <div class="roi-card live">
+          <div class="roi-month">MEI 2026 <span class="live-dot">● LIVE</span></div>
+          <div class="roi-pct running">Running...</div>
+          <div class="roi-detail">Sinyal aktif: <strong>4 running</strong></div>
+          <div class="roi-best">SIREN · BB · ONDO · TAO ⚡</div>
+        </div>
+
+        <div class="roi-card">
+          <div class="roi-month">APRIL 2026</div>
+          <div class="roi-pct">+262%</div>
+          <div class="roi-detail">Sinyal: <strong>9 confirmed</strong></div>
+          <div class="roi-best">Best: NOM +262% · AXS +45%</div>
+        </div>
+
+        <div class="roi-card">
+          <div class="roi-month">MARET 2026</div>
+          <div class="roi-pct">+187%</div>
+          <div class="roi-detail">Sinyal: <strong>7 confirmed</strong></div>
+          <div class="roi-best">Best: ONT +25% · SUI +14%</div>
+        </div>
+
+        <div class="roi-card">
+          <div class="roi-month">FEBRUARI 2026</div>
+          <div class="roi-pct">+218%</div>
+          <div class="roi-detail">Sinyal: <strong>8 confirmed</strong></div>
+          <div class="roi-best">Best: Multiple leverage setups</div>
+        </div>
+
+        <div class="roi-card highlight">
+          <div class="roi-month">JANUARI 2026</div>
+          <div class="roi-pct gold">+934%</div>
+          <div class="roi-detail">Sinyal: <strong>6 confirmed</strong></div>
+          <div class="roi-best">Best: EDGE +934% · STO +574%</div>
+        </div>
+
+        <div class="roi-card cta-card">
+          <div class="roi-month">BULAN DEPAN</div>
+          <div class="roi-pct" style="color:var(--muted);font-size:42px;letter-spacing:2px">???%</div>
+          <div class="roi-detail" style="color:#9BA8B5;font-size:12px;line-height:1.6;margin-bottom:16px">Setup bulan depan sudah dalam pipeline. Member yang masuk hari ini dapat akses dari menit pertama.</div>
+          <a href="#exchanges" class="btn-primary" style="font-size:13px;padding:12px 20px;border-radius:3px;text-decoration:none;display:inline-block">JOIN SEKARANG →</a>
+        </div>
+
+      </div>
+    </div>
+    <div class="roi-disclaimer">⚠ ROI bulanan adalah akumulasi dari semua sinyal aktif termasuk leverage. Hasil aktual per member berbeda tergantung ukuran posisi dan manajemen risiko. Tidak ada jaminan profit.</div>
+  </div>
+</section>
+
+<!-- MEMBER RESULTS -->
+<section class="results-section">
+  <div class="container">
+    <div class="section-label">// member results · verified pnl screenshot</div>
+    <h2 class="section-title">Hasil Member Nyata.<br><span style="color:var(--green)">Bukan Simulasi. Bukan Editan.</span></h2>
+    <div class="results-grid">
+
+      <div class="result-card">
+        <div class="result-header">
+          <span class="result-pair">EDGE/USDT</span>
+          <span class="result-badge">Long 25x</span>
+        </div>
+        <div class="result-roi">+934.31%</div>
+        <div class="result-meta">
+          <span>ENTRY <strong>0.6965</strong></span>
+          <span>EXIT <strong>0.9568</strong></span>
+        </div>
+        <div class="result-member">— Member Helmy578 · Bybit</div>
+      </div>
+
+      <div class="result-card">
+        <div class="result-header">
+          <span class="result-pair">STO/USDT</span>
+          <span class="result-badge">Long 15x</span>
+        </div>
+        <div class="result-roi">+574.97%</div>
+        <div class="result-meta">
+          <span>ENTRY <strong>0.12457</strong></span>
+          <span>EXIT <strong>0.17232</strong></span>
+        </div>
+        <div class="result-member">— Member Helmy578 · Bybit</div>
+      </div>
+
+      <div class="result-card">
+        <div class="result-header">
+          <span class="result-pair">ETH/USDT</span>
+          <span class="result-badge">Long 100x</span>
+        </div>
+        <div class="result-roi">+326.07%</div>
+        <div class="result-meta">
+          <span>ENTRY <strong>2,040</strong></span>
+          <span>EXIT <strong>2,106</strong></span>
+        </div>
+        <div class="result-member">— Member Ardiii · Bybit</div>
+      </div>
+
+    </div>
+    <div class="roi-disclaimer">⚠ Hasil menggunakan leverage. ROI adalah ROI posisi, bukan return modal keseluruhan. Hasil tiap member berbeda. Trading berisiko.</div>
+  </div>
+</section>
+
+<!-- ONCHAIN INTEL -->
+<section class="onchain-section">
+  <div class="container">
+    <div class="section-label">// onchain intelligence · update setiap 24 jam</div>
+    <h2 class="section-title">Data Yang Dipakai<br><span style="color:var(--green)">Smart Money. Bukan Retail.</span></h2>
+    <div class="onchain-grid">
+
+      <div class="onchain-card">
+        <div class="onchain-label">MVRV Z-SCORE</div>
+        <div class="onchain-val teal">1.82</div>
+        <div class="onchain-tag teal-tag">ACCUMULATION ZONE</div>
+        <p class="onchain-desc">Smart money accumulate diam-diam. Zona ini historis jadi entry terbaik sebelum rally dimulai.</p>
+      </div>
+
+      <div class="onchain-card">
+        <div class="onchain-label">BTC EXCHANGE OUTFLOW</div>
+        <div class="onchain-val teal">↓ 38K BTC</div>
+        <div class="onchain-tag teal-tag">SUPPLY SHRINKING</div>
+        <p class="onchain-desc">BTC ditarik besar-besaran dari exchange. Supply di market turun — tekanan jual melemah drastis.</p>
+      </div>
+
+      <div class="onchain-card">
+        <div class="onchain-label">FUNDING RATE (PERP)</div>
+        <div class="onchain-val gold">-0.003%</div>
+        <div class="onchain-tag gold-tag">HEALTHY · NO BUBBLE</div>
+        <p class="onchain-desc">Funding negatif = retail net short. Kontradiksi dengan akumulasi whale = squeeze fuel yang powerful.</p>
+      </div>
+
+      <div class="onchain-card">
+        <div class="onchain-label">STABLECOIN SUPPLY</div>
+        <div class="onchain-val gold">$182B</div>
+        <div class="onchain-tag gold-tag">DRY POWDER ATH</div>
+        <p class="onchain-desc">$182 miliar siap deploy. Ini adalah ammunition terbesar dalam sejarah crypto untuk rally berikutnya.</p>
+      </div>
+
+      <div class="onchain-card">
+        <div class="onchain-label">WHALE ACCUMULATION</div>
+        <div class="onchain-val teal">+12.4%</div>
+        <div class="onchain-tag blue-tag">INSTITUTIONAL BUYING</div>
+        <p class="onchain-desc">Wallet >1000 BTC naik 12.4% dalam 30 hari. Ini bukan retail. Ini institusi yang tidak bisa disembunyikan.</p>
+      </div>
+
+      <div class="onchain-card">
+        <div class="onchain-label">SOPR (7-DAY AVG)</div>
+        <div class="onchain-val gold">1.004</div>
+        <div class="onchain-tag gold-tag">TRANSITION PHASE</div>
+        <p class="onchain-desc">SOPR tipis di atas 1. Tidak ada panic, tidak ada euphoria. Market sedang transisi ke fase ekspansi.</p>
+      </div>
+
+    </div>
+    <div class="onchain-footer">● DATA DIPERBARUI SETIAP 24 JAM · SUMBER: GLASSNODE · COINGLASS · CRYPTOQUANT</div>
   </div>
 </section>
 
