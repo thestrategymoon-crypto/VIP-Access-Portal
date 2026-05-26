@@ -1007,6 +1007,220 @@
     letter-spacing: 2px;
   }
 
+  /* ── JOIN $100 SECTION ── */
+  .join100-section {
+    padding: 80px 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .join100-hero {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 40px;
+    align-items: start;
+    margin-bottom: 60px;
+  }
+
+  .join100-desc {
+    font-size: 15px;
+    color: #B0BEC8;
+    line-height: 1.75;
+  }
+
+  .join100-desc strong { color: var(--text); }
+
+  .join100-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 28px;
+  }
+
+  .compare-col {
+    background: var(--bg2);
+    border-radius: 6px;
+    padding: 20px;
+    border: 1px solid var(--border);
+  }
+
+  .compare-col.good { border-color: rgba(0,229,160,0.25); background: rgba(0,229,160,0.03); }
+  .compare-col.bad { border-color: rgba(255,69,96,0.2); background: rgba(255,69,96,0.03); }
+
+  .compare-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    letter-spacing: 0.5px;
+  }
+
+  .compare-col.good .compare-title { color: var(--green); }
+  .compare-col.bad .compare-title { color: var(--red); }
+
+  .compare-item {
+    font-size: 12px;
+    color: var(--muted);
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    line-height: 1.5;
+  }
+
+  .compare-item:last-child { border-bottom: none; }
+
+  /* MODAL CARD */
+  .modal-card {
+    background: var(--bg2);
+    border: 1px solid rgba(240,180,41,0.3);
+    border-radius: 8px;
+    padding: 32px 28px;
+    position: sticky;
+    top: 80px;
+  }
+
+  .modal-card-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+    opacity: 0.8;
+  }
+
+  .modal-amount {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 80px;
+    color: var(--gold);
+    line-height: 1;
+    filter: drop-shadow(0 0 20px rgba(240,180,41,0.25));
+  }
+
+  .modal-idr {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
+    margin-bottom: 20px;
+  }
+
+  .modal-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 16px 0;
+  }
+
+  .modal-items { display: flex; flex-direction: column; gap: 10px; }
+
+  .modal-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 13px;
+    color: #B0BEC8;
+    line-height: 1.5;
+  }
+
+  .modal-check {
+    color: var(--gold);
+    font-size: 10px;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+
+  .modal-note {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+    background: rgba(240,180,41,0.05);
+    padding: 10px 14px;
+    border-radius: 4px;
+    border-left: 2px solid var(--gold);
+  }
+
+  .modal-note strong { color: var(--gold); }
+
+  /* SIMULASI */
+  .sim-section {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 32px;
+  }
+
+  .sim-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+  }
+
+  .sim-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .sim-card {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .sim-card:hover { transform: translateY(-3px); }
+  .sim-card.highlight-sim { border-color: rgba(240,180,41,0.4); background: rgba(240,180,41,0.04); }
+
+  .sim-modal {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .sim-roi {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    color: var(--green);
+    line-height: 1;
+  }
+
+  .sim-roi.gold { color: var(--gold); }
+
+  .sim-result {
+    font-size: 18px;
+    color: var(--text);
+    margin: 8px 0 6px;
+  }
+
+  .sim-result strong { color: var(--green); font-size: 22px; }
+
+  .sim-note {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 1px;
+  }
+
+  .sim-disclaimer {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.6;
+    border-left: 2px solid rgba(240,180,41,0.3);
+    padding-left: 12px;
+  }
+
+  @media (max-width: 768px) {
+    .join100-hero { grid-template-columns: 1fr; }
+    .modal-card { position: static; }
+    .join100-compare { grid-template-columns: 1fr; }
+    .sim-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
   /* ── BEFORE AFTER SINYAL ── */
   .ba-grid {
     display: grid;
@@ -1320,7 +1534,6 @@
     <span class="ticker-item">BYBIT REFERRAL <span>AKTIF</span></span>
     <span class="ticker-item">MEXC REFERRAL <span>AKTIF</span></span>
     <span class="ticker-item">XT.COM REFERRAL <span>AKTIF</span></span>
-    <span class="ticker-item">WEEX REFERRAL <span>AKTIF</span></span>
     <span class="ticker-item">FUTURES SETUP <span>SMC/ICT</span></span>
     <span class="ticker-item">ON-CHAIN <span>LIVE</span></span>
     <span class="ticker-item">ANALISA PAGI <span>SETIAP HARI</span></span>
@@ -1331,7 +1544,6 @@
     <span class="ticker-item">BYBIT REFERRAL <span>AKTIF</span></span>
     <span class="ticker-item">MEXC REFERRAL <span>AKTIF</span></span>
     <span class="ticker-item">XT.COM REFERRAL <span>AKTIF</span></span>
-    <span class="ticker-item">WEEX REFERRAL <span>AKTIF</span></span>
     <span class="ticker-item">FUTURES SETUP <span>SMC/ICT</span></span>
     <span class="ticker-item">ON-CHAIN <span>LIVE</span></span>
     <span class="ticker-item">ANALISA PAGI <span>SETIAP HARI</span></span>
@@ -1726,6 +1938,111 @@
 
 <hr class="divider">
 
+<!-- JOIN VIP $100 SECTION -->
+<section class="join100-section">
+  <div class="container">
+    <div class="section-label">// mulai dari mana? ini jawabannya</div>
+    <h2 class="section-title">Modal <span style="color:var(--gold)">$100.</span><br>Akses VIP <span style="color:var(--green)">Gratis Seumur Hidup.</span></h2>
+
+    <div class="join100-hero">
+      <div class="join100-left">
+        <p class="join100-desc">Kamu tidak butuh modal besar untuk mulai trading cerdas. Dengan <strong>$100 — sekitar Rp 1,6 juta</strong> — kamu sudah bisa masuk ke komunitas trader yang pakai data institusional, bukan tebak-tebakan.</p>
+        <p class="join100-desc" style="margin-top:12px">Yang trader lain bayar mahal untuk akses seperti ini. <strong>Kamu dapat gratis.</strong> Selamanya.</p>
+
+        <div class="join100-compare">
+          <div class="compare-col bad">
+            <div class="compare-title">❌ Tanpa 369 Global</div>
+            <div class="compare-item">Analisa sendiri, sering salah arah</div>
+            <div class="compare-item">Bayar signal Rp 300rb–1jt/bulan</div>
+            <div class="compare-item">Masuk market tanpa data on-chain</div>
+            <div class="compare-item">FOMO, panic sell, cut loss terus</div>
+            <div class="compare-item">Modal $100 habis dalam seminggu</div>
+          </div>
+          <div class="compare-col good">
+            <div class="compare-title">✅ Dengan 369 Global VIP</div>
+            <div class="compare-item">Setup entry presisi SMC/ICT harian</div>
+            <div class="compare-item">100% gratis — daftar exchange saja</div>
+            <div class="compare-item">Data whale, MVRV, funding rate live</div>
+            <div class="compare-item">Risk management terstruktur & jelas</div>
+            <div class="compare-item">Modal $100 bisa jadi $200–$500+</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="join100-right">
+        <div class="modal-card">
+          <div class="modal-card-tag">MODAL MINIMUM</div>
+          <div class="modal-amount">$100</div>
+          <div class="modal-idr">≈ Rp 1.600.000</div>
+          <div class="modal-divider"></div>
+          <div class="modal-items">
+            <div class="modal-item">
+              <span class="modal-check">✦</span>
+              <span>Bisa mulai spot trading hari ini</span>
+            </div>
+            <div class="modal-item">
+              <span class="modal-check">✦</span>
+              <span>Cukup untuk 3–5 posisi sekaligus</span>
+            </div>
+            <div class="modal-item">
+              <span class="modal-check">✦</span>
+              <span>Risk management 2–5% per trade</span>
+            </div>
+            <div class="modal-item">
+              <span class="modal-check">✦</span>
+              <span>Akses semua sinyal VIP 369 Global</span>
+            </div>
+            <div class="modal-item">
+              <span class="modal-check">✦</span>
+              <span>Bisa scale up kapan saja sesuai profit</span>
+            </div>
+          </div>
+          <div class="modal-divider"></div>
+          <div class="modal-note">💡 Semakin besar modal, semakin besar hasil. Tapi <strong>$100 sudah cukup untuk mulai.</strong></div>
+          <a href="#exchanges" class="btn-primary" style="display:flex;justify-content:center;align-items:center;gap:8px;text-decoration:none;margin-top:20px;font-size:14px;padding:16px;">
+            ⚡ MULAI SEKARANG — GRATIS
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIMULASI PROFIT -->
+    <div class="sim-section">
+      <div class="sim-label">// simulasi hasil · berdasarkan track record 369 super analisis</div>
+      <div class="sim-grid">
+        <div class="sim-card">
+          <div class="sim-modal">Modal $100</div>
+          <div class="sim-roi">+187%</div>
+          <div class="sim-result">= <strong>$287</strong></div>
+          <div class="sim-note">Maret 2026 · 7 sinyal</div>
+        </div>
+        <div class="sim-card">
+          <div class="sim-modal">Modal $200</div>
+          <div class="sim-roi">+218%</div>
+          <div class="sim-result">= <strong>$636</strong></div>
+          <div class="sim-note">Feb 2026 · 8 sinyal</div>
+        </div>
+        <div class="sim-card highlight-sim">
+          <div class="sim-modal">Modal $500</div>
+          <div class="sim-roi gold">+262%</div>
+          <div class="sim-result">= <strong>$1,810</strong></div>
+          <div class="sim-note">April 2026 · 9 sinyal</div>
+        </div>
+        <div class="sim-card">
+          <div class="sim-modal">Modal $1,000</div>
+          <div class="sim-roi gold">+934%</div>
+          <div class="sim-result">= <strong>$10,340</strong></div>
+          <div class="sim-note">Jan 2026 · EDGE +934%</div>
+        </div>
+      </div>
+      <div class="sim-disclaimer">⚠ Simulasi berdasarkan akumulasi ROI bulanan dengan leverage. Hasil aktual berbeda tergantung timing entry, ukuran posisi, dan manajemen risiko masing-masing. Tidak ada jaminan profit. Trading selalu mengandung risiko.</div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
 <!-- EXCHANGES -->
 <section class="exchanges-section" id="exchanges">
   <div class="container">
@@ -1777,22 +2094,6 @@
         </ul>
         <a href="https://www.xt.com/en/accounts/register?ref=SN9FI7" target="_blank" class="exchange-btn">
           <span>DAFTAR XT.COM SEKARANG</span>
-          <span>→</span>
-        </a>
-      </div>
-
-      <!-- WEEX -->
-      <div class="exchange-card weex">
-        <div class="exchange-name">WEEX</div>
-        <div class="exchange-tag">🟢 VOLATILITY TRADER'S CHOICE</div>
-        <ul class="exchange-features">
-          <li>Leverage hingga 400x</li>
-          <li>Futures pair lengkap & likuid</li>
-          <li>UI ringan, execution cepat</li>
-          <li>Fee rendah untuk trader aktif</li>
-        </ul>
-        <a href="https://www.weex.com/en/register?vipCode=az0p" target="_blank" class="exchange-btn" style="background:var(--green);color:#080B0F;">
-          <span>DAFTAR WEEX SEKARANG</span>
           <span>→</span>
         </a>
       </div>
@@ -1873,7 +2174,7 @@
           <!-- COPY MESSAGE BOX -->
           <div class="copy-msg-box" id="copyBox">
             <div class="copy-msg-label">TEMPLATE KONFIRMASI — KLIK UNTUK COPY</div>
-            <div class="copy-msg-text" id="msgText">Min, saya sudah registrasi via <strong>[Bybit / MEXC / XT.COM / WEEX]</strong> menggunakan link resmi 369 Global, KYC sudah selesai, dan deposit sudah siap. Mohon aktifkan akses VIP saya. Terima kasih! 🙏</div>
+            <div class="copy-msg-text" id="msgText">Min, saya sudah registrasi via <strong>[Bybit / MEXC / XT.COM]</strong> menggunakan link resmi 369 Global, KYC sudah selesai, dan deposit sudah siap. Mohon aktifkan akses VIP saya. Terima kasih! 🙏</div>
             <button class="copy-btn" onclick="copyMsg()">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
               <span id="copyLabel">Copy Pesan</span>
@@ -1902,7 +2203,6 @@
       <a href="https://partner.bybit-global.com/b/369global" target="_blank" class="btn-primary">🔷 Bybit</a>
       <a href="https://www.mexc.fm/id-ID/acquisition/custom-sign-up?shareCode=mexc-1JoSs" target="_blank" class="btn-outline">🔶 MEXC</a>
       <a href="https://www.xt.com/en/accounts/register?ref=SN9FI7" target="_blank" class="btn-outline" style="border-color:rgba(255,165,0,0.4);color:#FFA500;">⚡ XT.COM</a>
-      <a href="https://www.weex.com/en/register?vipCode=az0p" target="_blank" class="btn-outline" style="border-color:rgba(0,229,160,0.4);color:#00E5A0;">🟢 WEEX</a>
       <a href="https://t.me/arttrading369" target="_blank" class="btn-outline" style="border-color:rgba(0,212,255,0.4);color:var(--cyan);">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.04 9.613c-.148.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.48 14.617l-2.95-.924c-.641-.2-.653-.641.136-.949l11.532-4.448c.533-.194 1.001.13.364.952z"/></svg>
         Konfirmasi Admin
@@ -1923,13 +2223,12 @@
   <a href="https://partner.bybit-global.com/b/369global" target="_blank" class="floating-btn">🔷 Bybit</a>
   <a href="https://www.mexc.fm/id-ID/acquisition/custom-sign-up?shareCode=mexc-1JoSs" target="_blank" class="floating-btn-2">🔶 MEXC</a>
   <a href="https://www.xt.com/en/accounts/register?ref=SN9FI7" target="_blank" class="floating-btn-2" style="background:rgba(255,165,0,0.12);color:#FFA500;border-color:rgba(255,165,0,0.35);">⚡ XT</a>
-  <a href="https://www.weex.com/en/register?vipCode=az0p" target="_blank" class="floating-btn-2" style="background:rgba(0,229,160,0.12);color:#00E5A0;border-color:rgba(0,229,160,0.35);">🟢 WEEX</a>
 </div>
 
 <script>
   // Copy confirmation message
   function copyMsg() {
-    const text = 'Min, saya sudah registrasi via [Bybit / MEXC / XT.COM / WEEX] menggunakan link resmi 369 Global, KYC sudah selesai, dan deposit sudah siap. Mohon aktifkan akses VIP saya. Terima kasih! 🙏';
+    const text = 'Min, saya sudah registrasi via [Bybit / MEXC / XT.COM] menggunakan link resmi 369 Global, KYC sudah selesai, dan deposit sudah siap. Mohon aktifkan akses VIP saya. Terima kasih! 🙏';
     navigator.clipboard.writeText(text).then(() => {
       const btn = document.querySelector('.copy-btn');
       const label = document.getElementById('copyLabel');
