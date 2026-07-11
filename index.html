@@ -21,9 +21,7 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
-
   body {
     background: var(--bg);
     color: var(--text);
@@ -32,7 +30,6 @@
     cursor: default;
   }
 
-  /* GRAIN OVERLAY */
   body::before {
     content: '';
     position: fixed;
@@ -43,7 +40,6 @@
     opacity: 0.4;
   }
 
-  /* GRID LINES */
   body::after {
     content: '';
     position: fixed;
@@ -110,22 +106,18 @@
 
   .hero-glow {
     position: absolute;
-    width: 600px;
-    height: 600px;
+    width: 600px; height: 600px;
     background: radial-gradient(circle, rgba(240,180,41,0.08) 0%, transparent 70%);
-    top: 50%;
-    left: 50%;
+    top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     pointer-events: none;
   }
 
   .hero-glow-2 {
     position: absolute;
-    width: 400px;
-    height: 400px;
+    width: 400px; height: 400px;
     background: radial-gradient(circle, rgba(0,212,255,0.05) 0%, transparent 70%);
-    top: 30%;
-    right: 10%;
+    top: 30%; right: 10%;
     pointer-events: none;
   }
 
@@ -151,16 +143,8 @@
   }
 
   .hero-title .line1 { color: var(--text); display: block; }
-  .hero-title .line2 { 
-    color: var(--gold); 
-    display: block;
-    -webkit-text-stroke: 1px var(--gold);
-  }
-  .hero-title .line3 { 
-    color: transparent;
-    -webkit-text-stroke: 1px rgba(240,180,41,0.4);
-    display: block;
-  }
+  .hero-title .line2 { color: var(--gold); display: block; -webkit-text-stroke: 1px var(--gold); }
+  .hero-title .line3 { color: transparent; -webkit-text-stroke: 1px rgba(240,180,41,0.4); display: block; }
 
   .hero-sub {
     font-size: 16px;
@@ -237,14 +221,11 @@
     z-index: 1;
     display: flex;
     justify-content: center;
-    gap: 0;
-    margin: 60px 24px 0;
     border: 1px solid var(--border);
     border-radius: 4px;
     overflow: hidden;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 600px;
+    margin: 60px auto 0;
     opacity: 0;
     animation: fadeUp 0.8s ease 1s forwards;
   }
@@ -255,7 +236,6 @@
     text-align: center;
     background: var(--bg2);
     border-right: 1px solid var(--border);
-    position: relative;
   }
 
   .stat-item:last-child { border-right: none; }
@@ -301,10 +281,7 @@
     margin-bottom: 48px;
   }
 
-  .container {
-    max-width: 860px;
-    margin: 0 auto;
-  }
+  .container { max-width: 860px; margin: 0 auto; }
 
   /* ── BENEFITS ── */
   .benefits-grid {
@@ -334,33 +311,12 @@
     transition: transform 0.3s;
   }
 
-  .benefit-card:hover {
-    border-color: rgba(240,180,41,0.4);
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
-  }
-
+  .benefit-card:hover { border-color: rgba(240,180,41,0.4); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
   .benefit-card:hover::before { transform: scaleX(1); }
 
-  .benefit-icon {
-    font-size: 28px;
-    margin-bottom: 16px;
-    display: block;
-  }
-
-  .benefit-title {
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 600;
-    font-size: 15px;
-    color: var(--text);
-    margin-bottom: 8px;
-  }
-
-  .benefit-desc {
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.6;
-  }
+  .benefit-icon { font-size: 28px; margin-bottom: 16px; display: block; }
+  .benefit-title { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 15px; color: var(--text); margin-bottom: 8px; }
+  .benefit-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
 
   /* ── EXCHANGES ── */
   .exchanges-section {
@@ -369,15 +325,22 @@
     border-bottom: 1px solid var(--border);
   }
 
+  /* TWO-column grid now that XT is removed */
   .exchange-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 640px) {
+    .exchange-cards { grid-template-columns: 1fr; }
   }
 
   .exchange-card {
-    border-radius: 6px;
-    padding: 32px;
+    border-radius: 8px;
+    padding: 40px 36px;          /* more padding → bigger feel */
     text-decoration: none;
     color: var(--text);
     transition: all 0.3s;
@@ -387,46 +350,45 @@
 
   .exchange-card.bybit {
     background: linear-gradient(135deg, #0D1117 0%, #131920 100%);
-    border: 1px solid rgba(240,180,41,0.3);
-  }
-
-  .exchange-card.mexc {
-    background: linear-gradient(135deg, #0D1117 0%, #131920 100%);
-    border: 1px solid rgba(0,212,255,0.3);
-  }
-
-  .exchange-card.xt {
-    background: linear-gradient(135deg, #0D1117 0%, #131920 100%);
-    border: 1px solid rgba(255,165,0,0.2);
+    border: 2px solid rgba(240,180,41,0.45);   /* thicker border */
   }
 
   .exchange-card.weex {
     background: linear-gradient(135deg, #0D1117 0%, #131920 100%);
-    border: 1px solid rgba(0,229,160,0.2);
+    border: 2px solid rgba(0,195,122,0.45);
   }
 
-  .exchange-card.weex .exchange-name { color: #00E5A0; }
-  .exchange-card.weex .exchange-features li::before { color: #00E5A0; }
-  .exchange-card.weex:hover { box-shadow: 0 20px 60px rgba(0,229,160,0.1); }
+  .exchange-card:hover { transform: translateY(-8px); box-shadow: 0 24px 64px rgba(0,0,0,0.55); }
+  .exchange-card.bybit:hover { box-shadow: 0 24px 64px rgba(240,180,41,0.2); }
+  .exchange-card.weex:hover  { box-shadow: 0 24px 64px rgba(0,195,122,0.18); }
 
-  .exchange-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  /* BIG logo treatment */
+  .exchange-logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 6px;
   }
 
-  .exchange-card.bybit:hover { box-shadow: 0 20px 60px rgba(240,180,41,0.15); }
-  .exchange-card.mexc:hover { box-shadow: 0 20px 60px rgba(0,212,255,0.12); }
+  .exchange-logo-icon {
+    font-size: 48px;             /* large emoji icon */
+    line-height: 1;
+    filter: drop-shadow(0 0 16px rgba(240,180,41,0.35));
+  }
+
+  .exchange-card.weex .exchange-logo-icon {
+    filter: drop-shadow(0 0 16px rgba(0,195,122,0.4));
+  }
 
   .exchange-name {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 28px;
-    letter-spacing: 3px;
-    margin-bottom: 4px;
+    font-size: 52px;             /* was 28px — now BIG */
+    letter-spacing: 4px;
+    line-height: 1;
   }
 
   .exchange-card.bybit .exchange-name { color: var(--gold); }
-  .exchange-card.mexc .exchange-name { color: var(--cyan); }
-  .exchange-card.xt .exchange-name { color: #FFA500; }
+  .exchange-card.weex  .exchange-name { color: #00C37A; }
 
   .exchange-tag {
     font-family: 'JetBrains Mono', monospace;
@@ -434,42 +396,37 @@
     color: var(--muted);
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
 
   .exchange-features {
     list-style: none;
-    margin-bottom: 28px;
+    margin-bottom: 32px;
   }
 
   .exchange-features li {
     font-size: 13px;
     color: #9BA8B5;
-    padding: 6px 0;
+    padding: 7px 0;
     display: flex;
     align-items: center;
     gap: 8px;
     border-bottom: 1px solid rgba(255,255,255,0.05);
   }
 
-  .exchange-features li::before {
-    content: '✦';
-    font-size: 8px;
-    color: var(--gold);
-    flex-shrink: 0;
-  }
-
-  .exchange-card.mexc .exchange-features li::before { color: var(--cyan); }
+  .exchange-features li::before { content: '✦'; font-size: 8px; color: var(--gold); flex-shrink: 0; }
+  .exchange-card.weex .exchange-features li::before { color: #00C37A; }
 
   .exchange-btn {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 16px;
-    border-radius: 3px;
-    font-weight: 600;
-    font-size: 13px;
+    padding: 15px 20px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 14px;
     letter-spacing: 0.5px;
+    transition: all 0.2s;
   }
 
   .exchange-card.bybit .exchange-btn {
@@ -477,16 +434,25 @@
     color: #080B0F;
   }
 
-  .exchange-card.mexc .exchange-btn {
-    background: var(--cyan);
+  .exchange-card.bybit .exchange-btn:hover { background: #FFD060; box-shadow: 0 6px 24px rgba(240,180,41,0.4); }
+
+  .exchange-card.weex .exchange-btn {
+    background: #00C37A;
     color: #080B0F;
   }
 
-  .exchange-card.xt .exchange-btn {
-    background: rgba(255,165,0,0.15);
-    color: #FFA500;
-    border: 1px solid rgba(255,165,0,0.3);
+  .exchange-card.weex .exchange-btn:hover { background: #00E090; box-shadow: 0 6px 24px rgba(0,195,122,0.4); }
+
+  /* Glow line top of card */
+  .exchange-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
   }
+
+  .exchange-card.bybit::before { background: linear-gradient(90deg, var(--gold), transparent); }
+  .exchange-card.weex::before  { background: linear-gradient(90deg, #00C37A, transparent); }
 
   /* ── STEPS ── */
   .steps-list {
@@ -499,9 +465,7 @@
   .steps-list::before {
     content: '';
     position: absolute;
-    left: 23px;
-    top: 24px;
-    bottom: 24px;
+    left: 23px; top: 24px; bottom: 24px;
     width: 1px;
     background: linear-gradient(to bottom, var(--gold), transparent);
   }
@@ -516,14 +480,10 @@
     transition: all 0.5s;
   }
 
-  .step-item.visible {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  .step-item.visible { opacity: 1; transform: translateX(0); }
 
   .step-num {
-    width: 48px;
-    height: 48px;
+    width: 48px; height: 48px;
     border-radius: 50%;
     border: 1px solid var(--gold);
     background: var(--bg);
@@ -539,19 +499,8 @@
   }
 
   .step-content { padding-top: 10px; }
-
-  .step-title {
-    font-weight: 600;
-    font-size: 15px;
-    color: var(--text);
-    margin-bottom: 4px;
-  }
-
-  .step-desc {
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.6;
-  }
+  .step-title { font-weight: 600; font-size: 15px; color: var(--text); margin-bottom: 4px; }
+  .step-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
 
   /* ── NOTE BOX ── */
   .note-box {
@@ -587,12 +536,7 @@
     margin-right: auto;
   }
 
-  .cta-buttons {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+  .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
   /* ── FOOTER ── */
   footer {
@@ -603,18 +547,8 @@
     border-top: 1px solid var(--border);
   }
 
-  .footer-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 18px;
-    letter-spacing: 3px;
-    color: var(--gold);
-    margin-bottom: 8px;
-  }
-
-  .footer-text {
-    font-size: 12px;
-    color: var(--muted);
-  }
+  .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 3px; color: var(--gold); margin-bottom: 8px; }
+  .footer-text { font-size: 12px; color: var(--muted); }
 
   /* ── FLOATING CTA ── */
   .floating-cta {
@@ -636,15 +570,9 @@
     white-space: nowrap;
   }
 
-  .floating-cta.show {
-    transform: translateX(-50%) translateY(0);
-  }
+  .floating-cta.show { transform: translateX(-50%) translateY(0); }
 
-  .floating-label {
-    font-size: 13px;
-    color: var(--muted);
-    font-weight: 500;
-  }
+  .floating-label { font-size: 13px; color: var(--muted); font-weight: 500; }
 
   .floating-btn {
     display: inline-flex;
@@ -660,10 +588,7 @@
     transition: all 0.2s;
   }
 
-  .floating-btn:hover {
-    background: #FFD060;
-    box-shadow: 0 4px 20px rgba(240,180,41,0.4);
-  }
+  .floating-btn:hover { background: #FFD060; box-shadow: 0 4px 20px rgba(240,180,41,0.4); }
 
   .floating-btn-2 {
     display: inline-flex;
@@ -680,18 +605,10 @@
     transition: all 0.2s;
   }
 
-  .floating-btn-2:hover {
-    background: rgba(0,212,255,0.25);
-  }
+  .floating-btn-2:hover { background: rgba(0,212,255,0.25); }
 
-  /* ── DIVIDER ── */
-  .divider {
-    border: none;
-    border-top: 1px solid var(--border);
-    margin: 0;
-  }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
 
-  /* ── ANIMATIONS ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
     to { opacity: 1; transform: translateY(0); }
@@ -708,20 +625,9 @@
     padding: 10px 0;
   }
 
-  .ticker-inner {
-    display: flex;
-    gap: 60px;
-    animation: ticker 30s linear infinite;
-    white-space: nowrap;
-  }
+  .ticker-inner { display: flex; gap: 60px; animation: ticker 28s linear infinite; white-space: nowrap; }
 
-  .ticker-item {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    color: var(--muted);
-    flex-shrink: 0;
-  }
-
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted); flex-shrink: 0; }
   .ticker-item span { color: var(--gold); }
   .ticker-item .up { color: var(--green); }
   .ticker-item .dn { color: var(--red); }
@@ -746,12 +652,7 @@
   .roi-scroll::-webkit-scrollbar-track { background: var(--bg); }
   .roi-scroll::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
 
-  .roi-cards {
-    display: flex;
-    gap: 16px;
-    min-width: max-content;
-    padding: 4px 2px;
-  }
+  .roi-cards { display: flex; gap: 16px; min-width: max-content; padding: 4px 2px; }
 
   .roi-card {
     background: var(--bg3);
@@ -763,89 +664,25 @@
     transition: all 0.3s;
   }
 
-  .roi-card:hover {
-    border-color: rgba(240,180,41,0.35);
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
-  }
-
+  .roi-card:hover { border-color: rgba(240,180,41,0.35); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
   .roi-card.live { border-color: rgba(0,229,160,0.3); }
   .roi-card.highlight { border-color: rgba(240,180,41,0.5); background: rgba(240,180,41,0.04); }
   .roi-card.cta-card { background: rgba(240,180,41,0.03); border-color: rgba(240,180,41,0.2); width: 240px; }
 
-  .roi-month {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    color: var(--muted);
-    letter-spacing: 2px;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .live-dot {
-    color: var(--green);
-    font-size: 9px;
-    animation: pulse-border 1.5s ease-in-out infinite;
-  }
-
-  .roi-pct {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 52px;
-    line-height: 1;
-    color: var(--green);
-    margin-bottom: 12px;
-    letter-spacing: -1px;
-  }
-
-  .roi-pct.running {
-    font-size: 32px;
-    color: var(--muted);
-    letter-spacing: 1px;
-  }
-
+  .roi-month { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); letter-spacing: 2px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .live-dot { color: var(--green); font-size: 9px; animation: pulse-border 1.5s ease-in-out infinite; }
+  .roi-pct { font-family: 'Bebas Neue', sans-serif; font-size: 52px; line-height: 1; color: var(--green); margin-bottom: 12px; letter-spacing: -1px; }
+  .roi-pct.running { font-size: 32px; color: var(--muted); letter-spacing: 1px; }
   .roi-pct.gold { color: var(--gold); }
-
-  .roi-detail {
-    font-size: 12px;
-    color: var(--muted);
-    margin-bottom: 6px;
-  }
-
+  .roi-detail { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
   .roi-detail strong { color: var(--text); }
-
-  .roi-best {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    color: var(--gold);
-    opacity: 0.7;
-  }
-
-  .roi-disclaimer {
-    margin-top: 24px;
-    font-size: 11px;
-    color: var(--muted);
-    background: rgba(255,180,0,0.04);
-    border-left: 2px solid rgba(240,180,41,0.3);
-    padding: 10px 14px;
-    border-radius: 0 3px 3px 0;
-    line-height: 1.6;
-  }
+  .roi-best { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--gold); opacity: 0.7; }
+  .roi-disclaimer { margin-top: 24px; font-size: 11px; color: var(--muted); background: rgba(255,180,0,0.04); border-left: 2px solid rgba(240,180,41,0.3); padding: 10px 14px; border-radius: 0 3px 3px 0; line-height: 1.6; }
 
   /* ── MEMBER RESULTS ── */
-  .results-section {
-    padding: 80px 24px;
-    position: relative;
-    z-index: 1;
-  }
+  .results-section { padding: 80px 24px; position: relative; z-index: 1; }
 
-  .results-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
-    margin-bottom: 24px;
-  }
+  .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-bottom: 24px; }
 
   .result-card {
     background: var(--bg2);
@@ -857,362 +694,73 @@
     transition: all 0.3s;
   }
 
-  .result-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--green), transparent);
-  }
+  .result-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--green), transparent); }
+  .result-card:hover { border-color: rgba(0,229,160,0.4); transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,229,160,0.08); }
 
-  .result-card:hover {
-    border-color: rgba(0,229,160,0.4);
-    transform: translateY(-4px);
-    box-shadow: 0 16px 48px rgba(0,229,160,0.08);
-  }
-
-  .result-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-  }
-
-  .result-pair {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    color: var(--muted);
-    letter-spacing: 1px;
-  }
-
-  .result-badge {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    color: var(--green);
-    border: 1px solid rgba(0,229,160,0.35);
-    padding: 3px 8px;
-    border-radius: 2px;
-  }
-
-  .result-roi {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 56px;
-    color: var(--green);
-    line-height: 1;
-    margin-bottom: 16px;
-    letter-spacing: -1px;
-    filter: drop-shadow(0 0 20px rgba(0,229,160,0.3));
-  }
-
-  .result-meta {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 12px;
-  }
-
-  .result-meta span {
-    font-size: 11px;
-    color: var(--muted);
-    font-family: 'JetBrains Mono', monospace;
-  }
-
+  .result-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+  .result-pair { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted); letter-spacing: 1px; }
+  .result-badge { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--green); border: 1px solid rgba(0,229,160,0.35); padding: 3px 8px; border-radius: 2px; }
+  .result-roi { font-family: 'Bebas Neue', sans-serif; font-size: 56px; color: var(--green); line-height: 1; margin-bottom: 16px; letter-spacing: -1px; filter: drop-shadow(0 0 20px rgba(0,229,160,0.3)); }
+  .result-meta { display: flex; gap: 20px; margin-bottom: 12px; }
+  .result-meta span { font-size: 11px; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
   .result-meta strong { color: var(--text); }
-
-  .result-member {
-    font-size: 11px;
-    color: var(--muted);
-    font-family: 'JetBrains Mono', monospace;
-    border-top: 1px solid rgba(255,255,255,0.05);
-    padding-top: 10px;
-    margin-top: 4px;
-  }
+  .result-member { font-size: 11px; color: var(--muted); font-family: 'JetBrains Mono', monospace; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 10px; margin-top: 4px; }
 
   /* ── ONCHAIN ── */
-  .onchain-section {
-    background: var(--bg2);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    padding: 80px 24px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .onchain-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 16px;
-    margin-bottom: 24px;
-  }
-
-  .onchain-card {
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 24px;
-    transition: all 0.3s;
-  }
-
-  .onchain-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
-  }
-
-  .onchain-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    color: var(--muted);
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-  }
-
-  .onchain-val {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 40px;
-    line-height: 1;
-    margin-bottom: 10px;
-    letter-spacing: -1px;
-  }
-
+  .onchain-section { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 80px 24px; position: relative; z-index: 1; }
+  .onchain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 24px; }
+  .onchain-card { background: var(--bg3); border: 1px solid var(--border); border-radius: 4px; padding: 24px; transition: all 0.3s; }
+  .onchain-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+  .onchain-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); letter-spacing: 2px; margin-bottom: 10px; }
+  .onchain-val { font-family: 'Bebas Neue', sans-serif; font-size: 40px; line-height: 1; margin-bottom: 10px; letter-spacing: -1px; }
   .onchain-val.teal { color: var(--green); }
   .onchain-val.gold { color: var(--gold); }
-
-  .onchain-tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 2px;
-    padding: 3px 8px;
-    border-radius: 2px;
-    display: inline-block;
-    margin-bottom: 12px;
-  }
-
+  .onchain-tag { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 2px; padding: 3px 8px; border-radius: 2px; display: inline-block; margin-bottom: 12px; }
   .teal-tag { background: rgba(0,229,160,0.1); color: var(--green); border: 1px solid rgba(0,229,160,0.25); }
   .gold-tag { background: rgba(240,180,41,0.1); color: var(--gold); border: 1px solid rgba(240,180,41,0.25); }
   .blue-tag { background: rgba(0,212,255,0.1); color: var(--cyan); border: 1px solid rgba(0,212,255,0.25); }
+  .onchain-desc { font-size: 12px; color: var(--muted); line-height: 1.65; }
+  .onchain-footer { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); text-align: center; padding: 14px 20px; border: 1px solid var(--border); border-radius: 3px; letter-spacing: 2px; }
 
-  .onchain-desc {
-    font-size: 12px;
-    color: var(--muted);
-    line-height: 1.65;
-  }
-
-  .onchain-footer {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    color: var(--muted);
-    text-align: center;
-    padding: 14px 20px;
-    border: 1px solid var(--border);
-    border-radius: 3px;
-    letter-spacing: 2px;
-  }
-
-  /* ── JOIN $100 SECTION ── */
-  .join100-section {
-    padding: 80px 24px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .join100-hero {
-    display: grid;
-    grid-template-columns: 1fr 380px;
-    gap: 40px;
-    align-items: start;
-    margin-bottom: 60px;
-  }
-
-  .join100-desc {
-    font-size: 15px;
-    color: #B0BEC8;
-    line-height: 1.75;
-  }
-
+  /* ── JOIN $100 ── */
+  .join100-section { padding: 80px 24px; position: relative; z-index: 1; }
+  .join100-hero { display: grid; grid-template-columns: 1fr 380px; gap: 40px; align-items: start; margin-bottom: 60px; }
+  .join100-desc { font-size: 15px; color: #B0BEC8; line-height: 1.75; }
   .join100-desc strong { color: var(--text); }
-
-  .join100-compare {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-top: 28px;
-  }
-
-  .compare-col {
-    background: var(--bg2);
-    border-radius: 6px;
-    padding: 20px;
-    border: 1px solid var(--border);
-  }
-
+  .join100-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
+  .compare-col { background: var(--bg2); border-radius: 6px; padding: 20px; border: 1px solid var(--border); }
   .compare-col.good { border-color: rgba(0,229,160,0.25); background: rgba(0,229,160,0.03); }
-  .compare-col.bad { border-color: rgba(255,69,96,0.2); background: rgba(255,69,96,0.03); }
-
-  .compare-title {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    font-weight: 600;
-    margin-bottom: 14px;
-    letter-spacing: 0.5px;
-  }
-
+  .compare-col.bad  { border-color: rgba(255,69,96,0.2); background: rgba(255,69,96,0.03); }
+  .compare-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; margin-bottom: 14px; letter-spacing: 0.5px; }
   .compare-col.good .compare-title { color: var(--green); }
-  .compare-col.bad .compare-title { color: var(--red); }
-
-  .compare-item {
-    font-size: 12px;
-    color: var(--muted);
-    padding: 6px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-    line-height: 1.5;
-  }
-
+  .compare-col.bad  .compare-title { color: var(--red); }
+  .compare-item { font-size: 12px; color: var(--muted); padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.04); line-height: 1.5; }
   .compare-item:last-child { border-bottom: none; }
 
-  /* MODAL CARD */
-  .modal-card {
-    background: var(--bg2);
-    border: 1px solid rgba(240,180,41,0.3);
-    border-radius: 8px;
-    padding: 32px 28px;
-    position: sticky;
-    top: 80px;
-  }
-
-  .modal-card-tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    color: var(--gold);
-    letter-spacing: 3px;
-    margin-bottom: 12px;
-    opacity: 0.8;
-  }
-
-  .modal-amount {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 80px;
-    color: var(--gold);
-    line-height: 1;
-    filter: drop-shadow(0 0 20px rgba(240,180,41,0.25));
-  }
-
-  .modal-idr {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: 4px;
-    margin-bottom: 20px;
-  }
-
-  .modal-divider {
-    height: 1px;
-    background: var(--border);
-    margin: 16px 0;
-  }
-
+  .modal-card { background: var(--bg2); border: 1px solid rgba(240,180,41,0.3); border-radius: 8px; padding: 32px 28px; position: sticky; top: 80px; }
+  .modal-card-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--gold); letter-spacing: 3px; margin-bottom: 12px; opacity: 0.8; }
+  .modal-amount { font-family: 'Bebas Neue', sans-serif; font-size: 80px; color: var(--gold); line-height: 1; filter: drop-shadow(0 0 20px rgba(240,180,41,0.25)); }
+  .modal-idr { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted); margin-top: 4px; margin-bottom: 20px; }
+  .modal-divider { height: 1px; background: var(--border); margin: 16px 0; }
   .modal-items { display: flex; flex-direction: column; gap: 10px; }
-
-  .modal-item {
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-    font-size: 13px;
-    color: #B0BEC8;
-    line-height: 1.5;
-  }
-
-  .modal-check {
-    color: var(--gold);
-    font-size: 10px;
-    margin-top: 3px;
-    flex-shrink: 0;
-  }
-
-  .modal-note {
-    font-size: 12px;
-    color: var(--muted);
-    line-height: 1.6;
-    background: rgba(240,180,41,0.05);
-    padding: 10px 14px;
-    border-radius: 4px;
-    border-left: 2px solid var(--gold);
-  }
-
+  .modal-item { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: #B0BEC8; line-height: 1.5; }
+  .modal-check { color: var(--gold); font-size: 10px; margin-top: 3px; flex-shrink: 0; }
+  .modal-note { font-size: 12px; color: var(--muted); line-height: 1.6; background: rgba(240,180,41,0.05); padding: 10px 14px; border-radius: 4px; border-left: 2px solid var(--gold); }
   .modal-note strong { color: var(--gold); }
 
-  /* SIMULASI */
-  .sim-section {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 32px;
-  }
-
-  .sim-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    color: var(--muted);
-    letter-spacing: 2px;
-    margin-bottom: 24px;
-  }
-
-  .sim-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 16px;
-    margin-bottom: 20px;
-  }
-
-  .sim-card {
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 20px;
-    text-align: center;
-    transition: all 0.3s;
-  }
-
+  .sim-section { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 32px; }
+  .sim-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); letter-spacing: 2px; margin-bottom: 24px; }
+  .sim-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 20px; }
+  .sim-card { background: var(--bg3); border: 1px solid var(--border); border-radius: 6px; padding: 20px; text-align: center; transition: all 0.3s; }
   .sim-card:hover { transform: translateY(-3px); }
   .sim-card.highlight-sim { border-color: rgba(240,180,41,0.4); background: rgba(240,180,41,0.04); }
-
-  .sim-modal {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 1px;
-    margin-bottom: 8px;
-  }
-
-  .sim-roi {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 40px;
-    color: var(--green);
-    line-height: 1;
-  }
-
+  .sim-modal { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 1px; margin-bottom: 8px; }
+  .sim-roi { font-family: 'Bebas Neue', sans-serif; font-size: 40px; color: var(--green); line-height: 1; }
   .sim-roi.gold { color: var(--gold); }
-
-  .sim-result {
-    font-size: 18px;
-    color: var(--text);
-    margin: 8px 0 6px;
-  }
-
+  .sim-result { font-size: 18px; color: var(--text); margin: 8px 0 6px; }
   .sim-result strong { color: var(--green); font-size: 22px; }
-
-  .sim-note {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    color: var(--muted);
-    letter-spacing: 1px;
-  }
-
-  .sim-disclaimer {
-    font-size: 11px;
-    color: var(--muted);
-    line-height: 1.6;
-    border-left: 2px solid rgba(240,180,41,0.3);
-    padding-left: 12px;
-  }
+  .sim-note { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--muted); letter-spacing: 1px; }
+  .sim-disclaimer { font-size: 11px; color: var(--muted); line-height: 1.6; border-left: 2px solid rgba(240,180,41,0.3); padding-left: 12px; }
 
   @media (max-width: 768px) {
     .join100-hero { grid-template-columns: 1fr; }
@@ -1221,195 +769,45 @@
     .sim-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
-  /* ── BEFORE AFTER SINYAL ── */
-  .ba-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    margin-bottom: 24px;
-  }
-
-  .ba-card {
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    overflow: hidden;
-    transition: all 0.3s;
-  }
-
-  .ba-card:hover {
-    border-color: rgba(240,180,41,0.3);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
-  }
-
-  .ba-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 18px;
-    background: rgba(255,255,255,0.03);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .ba-pair {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--gold);
-    margin-right: 8px;
-  }
-
-  .ba-type {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    color: var(--muted);
-    letter-spacing: 1px;
-  }
-
-  .ba-status {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    padding: 4px 10px;
-    border-radius: 2px;
-    letter-spacing: 1px;
-  }
-
-  .ba-status.hit {
-    background: rgba(0,229,160,0.12);
-    color: var(--green);
-    border: 1px solid rgba(0,229,160,0.3);
-  }
-
-  .ba-body {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 18px;
-  }
-
+  /* ── BEFORE AFTER ── */
+  .ba-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 24px; }
+  .ba-card { background: var(--bg3); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; transition: all 0.3s; }
+  .ba-card:hover { border-color: rgba(240,180,41,0.3); transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
+  .ba-header { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; background: rgba(255,255,255,0.03); border-bottom: 1px solid var(--border); }
+  .ba-pair { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; color: var(--gold); margin-right: 8px; }
+  .ba-type { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--muted); letter-spacing: 1px; }
+  .ba-status { font-family: 'JetBrains Mono', monospace; font-size: 10px; padding: 4px 10px; border-radius: 2px; letter-spacing: 1px; }
+  .ba-status.hit { background: rgba(0,229,160,0.12); color: var(--green); border: 1px solid rgba(0,229,160,0.3); }
+  .ba-body { display: flex; align-items: center; gap: 12px; padding: 18px; }
   .ba-before { flex: 1; }
   .ba-after { text-align: center; min-width: 80px; }
-
-  .ba-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 8px;
-    color: var(--muted);
-    letter-spacing: 2px;
-    margin-bottom: 8px;
-  }
-
-  .ba-detail-row {
-    display: flex;
-    justify-content: space-between;
-    font-size: 11px;
-    color: var(--muted);
-    padding: 3px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-  }
-
+  .ba-label { font-family: 'JetBrains Mono', monospace; font-size: 8px; color: var(--muted); letter-spacing: 2px; margin-bottom: 8px; }
+  .ba-detail-row { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); padding: 3px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
   .ba-detail-row strong { color: var(--text); font-size: 12px; }
-
-  .ba-tag-row {
-    font-size: 10px;
-    color: var(--gold);
-    opacity: 0.6;
-    margin-top: 8px;
-    line-height: 1.4;
-  }
-
-  .ba-arrow {
-    font-size: 20px;
-    color: var(--gold);
-    opacity: 0.5;
-    flex-shrink: 0;
-  }
-
-  .ba-roi-big {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 44px;
-    color: var(--green);
-    line-height: 1;
-    filter: drop-shadow(0 0 12px rgba(0,229,160,0.3));
-  }
-
-  .ba-roi-sub {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    color: var(--muted);
-    letter-spacing: 1px;
-    margin-top: 4px;
-  }
-
-  .ba-teaser {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(240,180,41,0.03);
-    border-color: rgba(240,180,41,0.2);
-    min-height: 200px;
-  }
-
+  .ba-tag-row { font-size: 10px; color: var(--gold); opacity: 0.6; margin-top: 8px; line-height: 1.4; }
+  .ba-arrow { font-size: 20px; color: var(--gold); opacity: 0.5; flex-shrink: 0; }
+  .ba-roi-big { font-family: 'Bebas Neue', sans-serif; font-size: 44px; color: var(--green); line-height: 1; filter: drop-shadow(0 0 12px rgba(0,229,160,0.3)); }
+  .ba-roi-sub { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--muted); letter-spacing: 1px; margin-top: 4px; }
+  .ba-teaser { display: flex; align-items: center; justify-content: center; background: rgba(240,180,41,0.03); border-color: rgba(240,180,41,0.2); min-height: 200px; }
   .ba-teaser-inner { text-align: center; padding: 32px 24px; }
 
   /* ── COPY MSG BOX ── */
-  .copy-msg-box {
-    background: rgba(8,11,15,0.8);
-    border: 1px solid rgba(240,180,41,0.25);
-    border-radius: 6px;
-    padding: 16px 18px;
-    margin-bottom: 4px;
-    position: relative;
-  }
-
-  .copy-msg-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    color: var(--gold);
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-    opacity: 0.7;
-  }
-
-  .copy-msg-text {
-    font-size: 13px;
-    color: #C8D4DF;
-    line-height: 1.7;
-    margin-bottom: 14px;
-  }
-
-  .copy-msg-text strong {
-    color: var(--gold);
-    font-weight: 600;
-  }
+  .copy-msg-box { background: rgba(8,11,15,0.8); border: 1px solid rgba(240,180,41,0.25); border-radius: 6px; padding: 16px 18px; margin-bottom: 4px; position: relative; }
+  .copy-msg-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--gold); letter-spacing: 2px; margin-bottom: 10px; opacity: 0.7; }
+  .copy-msg-text { font-size: 13px; color: #C8D4DF; line-height: 1.7; margin-bottom: 14px; }
+  .copy-msg-text strong { color: var(--gold); font-weight: 600; }
 
   .copy-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(240,180,41,0.12);
-    color: var(--gold);
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(240,180,41,0.12); color: var(--gold);
     border: 1px solid rgba(240,180,41,0.35);
-    font-size: 12px;
-    font-weight: 600;
-    font-family: 'DM Sans', sans-serif;
-    padding: 8px 16px;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: all 0.2s;
-    letter-spacing: 0.3px;
+    font-size: 12px; font-weight: 600; font-family: 'DM Sans', sans-serif;
+    padding: 8px 16px; border-radius: 3px; cursor: pointer;
+    transition: all 0.2s; letter-spacing: 0.3px;
   }
 
-  .copy-btn:hover {
-    background: rgba(240,180,41,0.22);
-    transform: translateY(-1px);
-  }
-
-  .copy-btn.copied {
-    background: rgba(0,229,160,0.15);
-    color: var(--green);
-    border-color: rgba(0,229,160,0.4);
-  }
+  .copy-btn:hover { background: rgba(240,180,41,0.22); transform: translateY(-1px); }
+  .copy-btn.copied { background: rgba(0,229,160,0.15); color: var(--green); border-color: rgba(0,229,160,0.4); }
 
   /* ── CONFIRM BOX ── */
   .confirm-box {
@@ -1431,78 +829,33 @@
     animation: shimmer 3s linear infinite;
   }
 
-  @keyframes shimmer {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
-  }
+  @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
 
-  .confirm-inner {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 32px;
-  }
-
-  .confirm-icon {
-    font-size: 40px;
-    flex-shrink: 0;
-    filter: drop-shadow(0 0 12px rgba(0,212,255,0.4));
-  }
-
+  .confirm-inner { display: flex; align-items: center; gap: 24px; padding: 32px; }
+  .confirm-icon { font-size: 40px; flex-shrink: 0; filter: drop-shadow(0 0 12px rgba(0,212,255,0.4)); }
   .confirm-content { flex: 1; }
-
-  .confirm-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 24px;
-    letter-spacing: 1px;
-    color: var(--text);
-    margin-bottom: 8px;
-  }
-
-  .confirm-desc {
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
+  .confirm-title { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 1px; color: var(--text); margin-bottom: 8px; }
+  .confirm-desc { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 20px; }
 
   .confirm-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
+    display: inline-flex; align-items: center; gap: 10px;
     background: linear-gradient(135deg, #0088CC, #00AAEE);
-    color: #fff;
-    font-weight: 600;
-    font-size: 14px;
-    padding: 14px 24px;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: all 0.25s;
-    letter-spacing: 0.3px;
+    color: #fff; font-weight: 600; font-size: 14px;
+    padding: 14px 24px; border-radius: 4px; text-decoration: none;
+    transition: all 0.25s; letter-spacing: 0.3px;
     box-shadow: 0 4px 20px rgba(0,136,204,0.3);
   }
 
-  .confirm-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(0,136,204,0.5);
-    background: linear-gradient(135deg, #0099DD, #00BBFF);
-  }
+  .confirm-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,136,204,0.5); background: linear-gradient(135deg, #0099DD, #00BBFF); }
 
   .confirm-badge {
-    flex-shrink: 0;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 13px;
-    letter-spacing: 2px;
-    color: var(--green);
-    border: 1px solid var(--green);
-    padding: 10px 14px;
-    border-radius: 4px;
-    text-align: center;
-    line-height: 1.4;
+    flex-shrink: 0; font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px; letter-spacing: 2px; color: var(--green);
+    border: 1px solid var(--green); padding: 10px 14px;
+    border-radius: 4px; text-align: center; line-height: 1.4;
     animation: pulse-border 2s ease-in-out infinite;
   }
 
-  /* MOBILE */
   @media (max-width: 600px) {
     nav { padding: 14px 20px; }
     .floating-cta { bottom: 16px; padding: 8px 8px 8px 16px; }
@@ -1515,6 +868,261 @@
     .confirm-badge { align-self: center; }
     .confirm-btn { font-size: 13px; padding: 12px 18px; }
   }
+
+  /* ── SUPER ANALISIS DASHBOARD ── */
+  .dashboard-section {
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 80px 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .dashboard-intro {
+    font-size: 15px;
+    color: #B0BEC8;
+    line-height: 1.8;
+    max-width: 680px;
+    margin-bottom: 48px;
+  }
+
+  .dashboard-intro strong { color: var(--text); }
+  .dashboard-intro em { color: var(--gold); font-style: normal; font-weight: 600; }
+
+  /* Exchange comparison cards */
+  .exchange-compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 700px) {
+    .exchange-compare-grid { grid-template-columns: 1fr; }
+  }
+
+  .excomp-card {
+    border-radius: 8px;
+    padding: 32px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .excomp-card.bybit-comp {
+    background: linear-gradient(160deg, rgba(13,17,23,1) 0%, rgba(30,22,5,0.6) 100%);
+    border: 1px solid rgba(240,180,41,0.35);
+  }
+
+  .excomp-card.weex-comp {
+    background: linear-gradient(160deg, rgba(13,17,23,1) 0%, rgba(0,40,25,0.5) 100%);
+    border: 1px solid rgba(0,195,122,0.35);
+  }
+
+  .excomp-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .excomp-card.bybit-comp::before { background: linear-gradient(90deg, var(--gold), transparent); }
+  .excomp-card.weex-comp::before  { background: linear-gradient(90deg, #00C37A, transparent); }
+
+  .excomp-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .excomp-icon { font-size: 36px; line-height: 1; }
+
+  .excomp-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 38px;
+    letter-spacing: 3px;
+    line-height: 1;
+  }
+
+  .bybit-comp .excomp-name { color: var(--gold); }
+  .weex-comp  .excomp-name { color: #00C37A; }
+
+  .excomp-tagline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  .excomp-verdict {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 18px;
+    padding: 10px 14px;
+    border-radius: 4px;
+  }
+
+  .bybit-comp .excomp-verdict {
+    background: rgba(240,180,41,0.08);
+    color: #E8C86A;
+    border-left: 3px solid var(--gold);
+  }
+
+  .weex-comp .excomp-verdict {
+    background: rgba(0,195,122,0.08);
+    color: #5AE0A8;
+    border-left: 3px solid #00C37A;
+  }
+
+  .excomp-rows { display: flex; flex-direction: column; gap: 0; }
+
+  .excomp-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    gap: 12px;
+  }
+
+  .excomp-row:last-child { border-bottom: none; }
+
+  .excomp-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    flex-shrink: 0;
+    min-width: 120px;
+  }
+
+  .excomp-val {
+    font-size: 12px;
+    color: var(--text);
+    text-align: right;
+    line-height: 1.5;
+  }
+
+  .excomp-val.gold  { color: var(--gold); font-weight: 600; }
+  .excomp-val.green { color: #00C37A; font-weight: 600; }
+  .excomp-val.muted { color: var(--muted); }
+
+  .excomp-badge {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 2px;
+    margin-left: 4px;
+  }
+
+  .badge-gold   { background: rgba(240,180,41,0.15); color: var(--gold); border: 1px solid rgba(240,180,41,0.3); }
+  .badge-green  { background: rgba(0,195,122,0.15);  color: #00C37A;     border: 1px solid rgba(0,195,122,0.3); }
+
+  /* Who should use */
+  .who-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 700px) { .who-grid { grid-template-columns: 1fr; } }
+
+  .who-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 24px;
+  }
+
+  .who-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .who-card.bybit-who .who-title { color: var(--gold); }
+  .who-card.weex-who  .who-title { color: #00C37A; }
+
+  .who-list { display: flex; flex-direction: column; gap: 8px; }
+
+  .who-item {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    font-size: 12.5px;
+    color: #9BA8B5;
+    line-height: 1.5;
+  }
+
+  .who-check { flex-shrink: 0; margin-top: 1px; font-size: 11px; }
+  .bybit-who .who-check { color: var(--gold); }
+  .weex-who  .who-check { color: #00C37A; }
+
+  /* Analisis note box */
+  .analisis-note {
+    background: linear-gradient(135deg, rgba(240,180,41,0.04), rgba(0,195,122,0.04));
+    border: 1px solid rgba(240,180,41,0.2);
+    border-radius: 8px;
+    padding: 28px 32px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .analisis-note::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--gold), #00C37A, var(--gold));
+    background-size: 200% 100%;
+    animation: shimmer 4s linear infinite;
+  }
+
+  .analisis-quote {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(22px, 4vw, 32px);
+    letter-spacing: 1px;
+    line-height: 1.2;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+
+  .analisis-quote em { color: var(--gold); font-style: normal; }
+
+  .analisis-sub {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 580px;
+    margin: 0 auto 20px;
+  }
+
+  .analisis-tags {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .analisis-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border-radius: 2px;
+  }
+
 </style>
 </head>
 <body>
@@ -1532,8 +1140,7 @@
     <span class="ticker-item">ETH <span class="up">▲ +1.8%</span></span>
     <span class="ticker-item">VIP GRATIS <span>100%</span></span>
     <span class="ticker-item">BYBIT REFERRAL <span>AKTIF</span></span>
-    <span class="ticker-item">MEXC REFERRAL <span>AKTIF</span></span>
-    <span class="ticker-item">XT.COM REFERRAL <span>AKTIF</span></span>
+    <span class="ticker-item">WEEX REFERRAL <span>AKTIF</span></span>
     <span class="ticker-item">FUTURES SETUP <span>SMC/ICT</span></span>
     <span class="ticker-item">ON-CHAIN <span>LIVE</span></span>
     <span class="ticker-item">ANALISA PAGI <span>SETIAP HARI</span></span>
@@ -1542,8 +1149,7 @@
     <span class="ticker-item">ETH <span class="up">▲ +1.8%</span></span>
     <span class="ticker-item">VIP GRATIS <span>100%</span></span>
     <span class="ticker-item">BYBIT REFERRAL <span>AKTIF</span></span>
-    <span class="ticker-item">MEXC REFERRAL <span>AKTIF</span></span>
-    <span class="ticker-item">XT.COM REFERRAL <span>AKTIF</span></span>
+    <span class="ticker-item">WEEX REFERRAL <span>AKTIF</span></span>
     <span class="ticker-item">FUTURES SETUP <span>SMC/ICT</span></span>
     <span class="ticker-item">ON-CHAIN <span>LIVE</span></span>
     <span class="ticker-item">ANALISA PAGI <span>SETIAP HARI</span></span>
@@ -1554,25 +1160,20 @@
 <section class="hero">
   <div class="hero-glow"></div>
   <div class="hero-glow-2"></div>
-
   <div class="hero-tag">369 GLOBAL — VIP Exclusive</div>
-
   <h1 class="hero-title">
     <span class="line1">VIP</span>
     <span class="line2">GRATIS</span>
     <span class="line3">LIFETIME</span>
   </h1>
-
   <p class="hero-sub">
     Daftar exchange lewat link kami → <strong>akses VIP langsung aktif.</strong><br>
     Tidak ada biaya bulanan. Modal tetap 100% di akun kamu.
   </p>
-
   <div class="hero-cta-group">
     <a href="#exchanges" class="btn-primary">⚡ Daftar Sekarang — Gratis</a>
     <a href="#cara-daftar" class="btn-outline">Lihat Cara Kerja →</a>
   </div>
-
   <div class="stats-bar">
     <div class="stat-item">
       <span class="stat-num">100%</span>
@@ -1583,7 +1184,7 @@
       <span class="stat-label">Langkah Daftar</span>
     </div>
     <div class="stat-item">
-      <span class="stat-num">3+</span>
+      <span class="stat-num">2</span>
       <span class="stat-label">Exchange Pilihan</span>
     </div>
     <div class="stat-item">
@@ -1630,49 +1231,42 @@
     <h2 class="section-title">ROI Per Bulan.<br><span style="color:var(--gold)">200%++ Konsisten.</span></h2>
     <div class="roi-scroll">
       <div class="roi-cards">
-
         <div class="roi-card live">
           <div class="roi-month">MEI 2026 <span class="live-dot">● LIVE</span></div>
           <div class="roi-pct running">Running...</div>
           <div class="roi-detail">Sinyal aktif: <strong>4 running</strong></div>
           <div class="roi-best">SIREN · BB · ONDO · TAO ⚡</div>
         </div>
-
         <div class="roi-card">
           <div class="roi-month">APRIL 2026</div>
           <div class="roi-pct">+262%</div>
           <div class="roi-detail">Sinyal: <strong>9 confirmed</strong></div>
           <div class="roi-best">Best: NOM +262% · AXS +45%</div>
         </div>
-
         <div class="roi-card">
           <div class="roi-month">MARET 2026</div>
           <div class="roi-pct">+187%</div>
           <div class="roi-detail">Sinyal: <strong>7 confirmed</strong></div>
           <div class="roi-best">Best: ONT +25% · SUI +14%</div>
         </div>
-
         <div class="roi-card">
           <div class="roi-month">FEBRUARI 2026</div>
           <div class="roi-pct">+218%</div>
           <div class="roi-detail">Sinyal: <strong>8 confirmed</strong></div>
           <div class="roi-best">Best: Multiple leverage setups</div>
         </div>
-
         <div class="roi-card highlight">
           <div class="roi-month">JANUARI 2026</div>
           <div class="roi-pct gold">+934%</div>
           <div class="roi-detail">Sinyal: <strong>6 confirmed</strong></div>
           <div class="roi-best">Best: EDGE +934% · STO +574%</div>
         </div>
-
         <div class="roi-card cta-card">
           <div class="roi-month">BULAN DEPAN</div>
           <div class="roi-pct" style="color:var(--muted);font-size:42px;letter-spacing:2px">???%</div>
           <div class="roi-detail" style="color:#9BA8B5;font-size:12px;line-height:1.6;margin-bottom:16px">Setup bulan depan sudah dalam pipeline. Member yang masuk hari ini dapat akses dari menit pertama.</div>
           <a href="#exchanges" class="btn-primary" style="font-size:13px;padding:12px 20px;border-radius:3px;text-decoration:none;display:inline-block">JOIN SEKARANG →</a>
         </div>
-
       </div>
     </div>
     <div class="roi-disclaimer">⚠ ROI bulanan adalah akumulasi dari semua sinyal aktif termasuk leverage. Hasil aktual per member berbeda tergantung ukuran posisi dan manajemen risiko. Tidak ada jaminan profit.</div>
@@ -1685,7 +1279,6 @@
     <div class="section-label">// 369 super analisis · verified pnl</div>
     <h2 class="section-title">Sinyal Nyata.<br><span style="color:var(--green)">Bukan Simulasi. Bukan Editan.</span></h2>
     <div class="results-grid">
-
       <div class="result-card">
         <div class="result-header">
           <span class="result-pair">EDGE/USDT</span>
@@ -1698,7 +1291,6 @@
         </div>
         <div class="result-member">— Member Helmy578 · Bybit</div>
       </div>
-
       <div class="result-card">
         <div class="result-header">
           <span class="result-pair">STO/USDT</span>
@@ -1711,7 +1303,6 @@
         </div>
         <div class="result-member">— Member Helmy578 · Bybit</div>
       </div>
-
       <div class="result-card">
         <div class="result-header">
           <span class="result-pair">ETH/USDT</span>
@@ -1724,7 +1315,6 @@
         </div>
         <div class="result-member">— Member Ardiii · Bybit</div>
       </div>
-
     </div>
   </div>
 </section>
@@ -1734,16 +1324,10 @@
   <div class="container">
     <div class="section-label">// before → after · sinyal live mei 2026</div>
     <h2 class="section-title">Setup Masuk.<br><span style="color:var(--gold)">TP Hit. Profit Keluar.</span></h2>
-
     <div class="ba-grid">
-
-      <!-- $AIA -->
       <div class="ba-card">
         <div class="ba-header">
-          <div>
-            <span class="ba-pair">$AIA / USDT</span>
-            <span class="ba-type">SPOT</span>
-          </div>
+          <div><span class="ba-pair">$AIA / USDT</span><span class="ba-type">SPOT</span></div>
           <span class="ba-status hit">TP 2 ✅</span>
         </div>
         <div class="ba-body">
@@ -1762,14 +1346,9 @@
           </div>
         </div>
       </div>
-
-      <!-- $BSB -->
       <div class="ba-card">
         <div class="ba-header">
-          <div>
-            <span class="ba-pair">$BSB / USDT</span>
-            <span class="ba-type">SCALPING SPOT</span>
-          </div>
+          <div><span class="ba-pair">$BSB / USDT</span><span class="ba-type">SCALPING SPOT</span></div>
           <span class="ba-status hit">TP 1 ✅</span>
         </div>
         <div class="ba-body">
@@ -1788,14 +1367,9 @@
           </div>
         </div>
       </div>
-
-      <!-- $TRIA -->
       <div class="ba-card">
         <div class="ba-header">
-          <div>
-            <span class="ba-pair">$TRIA / USDT</span>
-            <span class="ba-type">BREAKDOWN LEV 10x</span>
-          </div>
+          <div><span class="ba-pair">$TRIA / USDT</span><span class="ba-type">BREAKDOWN LEV 10x</span></div>
           <span class="ba-status hit">TP 1 ✅</span>
         </div>
         <div class="ba-body">
@@ -1814,14 +1388,9 @@
           </div>
         </div>
       </div>
-
-      <!-- $NMR -->
       <div class="ba-card">
         <div class="ba-header">
-          <div>
-            <span class="ba-pair">$NMR / USDT</span>
-            <span class="ba-type">LEV 10x · STRONG BUY 90%</span>
-          </div>
+          <div><span class="ba-pair">$NMR / USDT</span><span class="ba-type">LEV 10x · STRONG BUY 90%</span></div>
           <span class="ba-status hit">TP 1 ✅</span>
         </div>
         <div class="ba-body">
@@ -1840,14 +1409,9 @@
           </div>
         </div>
       </div>
-
-      <!-- $AI -->
       <div class="ba-card">
         <div class="ba-header">
-          <div>
-            <span class="ba-pair">$AI / USDT</span>
-            <span class="ba-type">STRONG BUY MULTI TF LEV 5x</span>
-          </div>
+          <div><span class="ba-pair">$AI / USDT</span><span class="ba-type">STRONG BUY MULTI TF LEV 5x</span></div>
           <span class="ba-status hit">TP 1 ✅</span>
         </div>
         <div class="ba-body">
@@ -1866,8 +1430,6 @@
           </div>
         </div>
       </div>
-
-      <!-- TEASER CARD -->
       <div class="ba-card ba-teaser">
         <div class="ba-teaser-inner">
           <div style="font-size:36px;margin-bottom:12px">🔒</div>
@@ -1876,7 +1438,6 @@
           <a href="#exchanges" class="btn-primary" style="font-size:13px;padding:12px 24px;border-radius:3px;text-decoration:none;display:inline-block">JOIN VIP GRATIS →</a>
         </div>
       </div>
-
     </div>
     <div class="roi-disclaimer">⚠ Hasil menggunakan leverage. ROI adalah ROI posisi, bukan return modal keseluruhan. Hasil tiap member berbeda. Trading berisiko.</div>
   </div>
@@ -1888,49 +1449,42 @@
     <div class="section-label">// onchain intelligence · update setiap 24 jam</div>
     <h2 class="section-title">Data Yang Dipakai<br><span style="color:var(--green)">Smart Money. Bukan Retail.</span></h2>
     <div class="onchain-grid">
-
       <div class="onchain-card">
         <div class="onchain-label">MVRV Z-SCORE</div>
         <div class="onchain-val teal">1.82</div>
         <div class="onchain-tag teal-tag">ACCUMULATION ZONE</div>
         <p class="onchain-desc">Smart money accumulate diam-diam. Zona ini historis jadi entry terbaik sebelum rally dimulai.</p>
       </div>
-
       <div class="onchain-card">
         <div class="onchain-label">BTC EXCHANGE OUTFLOW</div>
         <div class="onchain-val teal">↓ 38K BTC</div>
         <div class="onchain-tag teal-tag">SUPPLY SHRINKING</div>
         <p class="onchain-desc">BTC ditarik besar-besaran dari exchange. Supply di market turun — tekanan jual melemah drastis.</p>
       </div>
-
       <div class="onchain-card">
         <div class="onchain-label">FUNDING RATE (PERP)</div>
         <div class="onchain-val gold">-0.003%</div>
         <div class="onchain-tag gold-tag">HEALTHY · NO BUBBLE</div>
         <p class="onchain-desc">Funding negatif = retail net short. Kontradiksi dengan akumulasi whale = squeeze fuel yang powerful.</p>
       </div>
-
       <div class="onchain-card">
         <div class="onchain-label">STABLECOIN SUPPLY</div>
         <div class="onchain-val gold">$182B</div>
         <div class="onchain-tag gold-tag">DRY POWDER ATH</div>
         <p class="onchain-desc">$182 miliar siap deploy. Ini adalah ammunition terbesar dalam sejarah crypto untuk rally berikutnya.</p>
       </div>
-
       <div class="onchain-card">
         <div class="onchain-label">WHALE ACCUMULATION</div>
         <div class="onchain-val teal">+12.4%</div>
         <div class="onchain-tag blue-tag">INSTITUTIONAL BUYING</div>
         <p class="onchain-desc">Wallet >1000 BTC naik 12.4% dalam 30 hari. Ini bukan retail. Ini institusi yang tidak bisa disembunyikan.</p>
       </div>
-
       <div class="onchain-card">
         <div class="onchain-label">SOPR (7-DAY AVG)</div>
         <div class="onchain-val gold">1.004</div>
         <div class="onchain-tag gold-tag">TRANSITION PHASE</div>
         <p class="onchain-desc">SOPR tipis di atas 1. Tidak ada panic, tidak ada euphoria. Market sedang transisi ke fase ekspansi.</p>
       </div>
-
     </div>
     <div class="onchain-footer">● DATA DIPERBARUI SETIAP 24 JAM · SUMBER: GLASSNODE · COINGLASS · CRYPTOQUANT</div>
   </div>
@@ -1938,17 +1492,15 @@
 
 <hr class="divider">
 
-<!-- JOIN VIP $100 SECTION -->
+<!-- JOIN VIP $100 -->
 <section class="join100-section">
   <div class="container">
     <div class="section-label">// mulai dari mana? ini jawabannya</div>
     <h2 class="section-title">Modal <span style="color:var(--gold)">$100.</span><br>Akses VIP <span style="color:var(--green)">Gratis Seumur Hidup.</span></h2>
-
     <div class="join100-hero">
       <div class="join100-left">
         <p class="join100-desc">Kamu tidak butuh modal besar untuk mulai trading cerdas. Dengan <strong>$100 — sekitar Rp 1,6 juta</strong> — kamu sudah bisa masuk ke komunitas trader yang pakai data institusional, bukan tebak-tebakan.</p>
         <p class="join100-desc" style="margin-top:12px">Yang trader lain bayar mahal untuk akses seperti ini. <strong>Kamu dapat gratis.</strong> Selamanya.</p>
-
         <div class="join100-compare">
           <div class="compare-col bad">
             <div class="compare-title">❌ Tanpa 369 Global</div>
@@ -1968,7 +1520,6 @@
           </div>
         </div>
       </div>
-
       <div class="join100-right">
         <div class="modal-card">
           <div class="modal-card-tag">MODAL MINIMUM</div>
@@ -1976,26 +1527,11 @@
           <div class="modal-idr">≈ Rp 1.600.000</div>
           <div class="modal-divider"></div>
           <div class="modal-items">
-            <div class="modal-item">
-              <span class="modal-check">✦</span>
-              <span>Bisa mulai spot trading hari ini</span>
-            </div>
-            <div class="modal-item">
-              <span class="modal-check">✦</span>
-              <span>Cukup untuk 3–5 posisi sekaligus</span>
-            </div>
-            <div class="modal-item">
-              <span class="modal-check">✦</span>
-              <span>Risk management 2–5% per trade</span>
-            </div>
-            <div class="modal-item">
-              <span class="modal-check">✦</span>
-              <span>Akses semua sinyal VIP 369 Global</span>
-            </div>
-            <div class="modal-item">
-              <span class="modal-check">✦</span>
-              <span>Bisa scale up kapan saja sesuai profit</span>
-            </div>
+            <div class="modal-item"><span class="modal-check">✦</span><span>Bisa mulai spot trading hari ini</span></div>
+            <div class="modal-item"><span class="modal-check">✦</span><span>Cukup untuk 3–5 posisi sekaligus</span></div>
+            <div class="modal-item"><span class="modal-check">✦</span><span>Risk management 2–5% per trade</span></div>
+            <div class="modal-item"><span class="modal-check">✦</span><span>Akses semua sinyal VIP 369 Global</span></div>
+            <div class="modal-item"><span class="modal-check">✦</span><span>Bisa scale up kapan saja sesuai profit</span></div>
           </div>
           <div class="modal-divider"></div>
           <div class="modal-note">💡 Semakin besar modal, semakin besar hasil. Tapi <strong>$100 sudah cukup untuk mulai.</strong></div>
@@ -2005,8 +1541,6 @@
         </div>
       </div>
     </div>
-
-    <!-- SIMULASI PROFIT -->
     <div class="sim-section">
       <div class="sim-label">// simulasi hasil · berdasarkan track record 369 super analisis</div>
       <div class="sim-grid">
@@ -2037,13 +1571,177 @@
       </div>
       <div class="sim-disclaimer">⚠ Simulasi berdasarkan akumulasi ROI bulanan dengan leverage. Hasil aktual berbeda tergantung timing entry, ukuran posisi, dan manajemen risiko masing-masing. Tidak ada jaminan profit. Trading selalu mengandung risiko.</div>
     </div>
-
   </div>
 </section>
 
 <hr class="divider">
 
-<!-- EXCHANGES -->
+
+<!-- SUPER ANALISIS DASHBOARD -->
+<section class="dashboard-section">
+  <div class="container">
+    <div class="section-label">// 369 super analisis · exchange intelligence</div>
+    <h2 class="section-title">KENAPA DUA EXCHANGE INI?<br><span style="color:var(--gold)">Bukan Asal Pilih.</span></h2>
+
+    <p class="dashboard-intro">
+      Di 369 GLOBAL, setiap setup yang kami kirim sudah disesuaikan dengan <strong>platform terbaik untuk eksekusinya.</strong>
+      Bybit dan WEEX bukan dipilih karena tren — tapi karena keduanya memberikan
+      <em>keunggulan nyata yang langsung berdampak ke P&L kamu.</em>
+      Ini breakdown lengkapnya.
+    </p>
+
+    <!-- EXCHANGE COMPARISON -->
+    <div class="exchange-compare-grid">
+
+      <!-- BYBIT -->
+      <div class="excomp-card bybit-comp">
+        <div class="excomp-header">
+          <div class="excomp-icon">🔷</div>
+          <div>
+            <div class="excomp-name">BYBIT</div>
+            <div class="excomp-tagline">INSTITUSIONAL · LIKUIDITAS TERTINGGI</div>
+          </div>
+        </div>
+        <div class="excomp-verdict">
+          "Exchange pilihan utama untuk trader serius. Likuiditas tertinggi di kelas perpetual futures — spread ketat bahkan saat volatilitas ekstrem."
+        </div>
+        <div class="excomp-rows">
+          <div class="excomp-row">
+            <span class="excomp-label">FEE MAKER</span>
+            <span class="excomp-val gold">0.01% <span class="excomp-badge badge-gold">TERENDAH</span></span>
+          </div>
+          <div class="excomp-row">
+            <span class="excomp-label">FEE TAKER</span>
+            <span class="excomp-val gold">0.06%</span>
+          </div>
+          <div class="excomp-row">
+            <span class="excomp-label">LEVERAGE MAX</span>
+            <span class="excomp-val">100x Perpetual</span>
+          </div>
+          <div class="excomp-row">
+            <span class="excomp-label">LIKUIDITAS</span>
+            <span class="excomp-val gold">Top 3 Dunia <span class="excomp-badge badge-gold">TERDALAM</span></span>
+          </div>
+          <div class="excomp-row">
+            <span class="excomp-label">COPY TRADING</span>
+            <span class="excomp-val">✓ Tersedia</span>
+          </div>
+          <div class="excomp-row">
+            <span class="excomp-label">INTERFACE</span>
+            <span class="excomp-val gold">Pro-grade, paling clean</span>
+          </div>
+          <div class="excomp-row">
+            <span class="excomp-label">REGULASI</span>
+            <span class="excomp-val">Licensed multi-jurisdiksi</span>
+          </div>
+          <div class="excomp-row">
+            <span class="excomp-label">KEUNGGULAN</span>
+            <span class="excomp-val gold">Slippage minimal di posisi besar</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- WEEX -->
+      <div class="excomp-card weex-comp">
+        <div class="excomp-header">
+          <div class="excomp-icon">🟢</div>
+          <div>
+            <div class="excomp-name">WEEX</div>
+            <div class="excomp-tagline">HIGH LEVERAGE · EKSEKUSI ULTRA-CEPAT</div>
+          </div>
+        </div>
+        <div class="excomp-verdict">
+          "Exchange rising yang tumbuh cepat dengan leverage hingga 200x. Cocok untuk scalper dan trader agresif yang butuh eksekusi presisi tinggi."
+        </div>
+        <div class="excomp-rows">
+          <div class="excomp-row">
+            <span class="excomp-label">LEVERAGE MAX</span>
+            <span class="excomp-val green">200x <span class="excomp-badge badge-green">TERTINGGI</span></span>
+          </div>
+          <div class="excomp-row">
+            <span class="excomp-label">EKSEKUSI</span>
+            <span class="excomp-val green">Ultra-cepat, latency rendah</span>
+          </div>
+          <div class="excomp-row">
+            <span class="excomp-label">BONUS DEPOSIT</span>
+            <span class="excomp-val green">✓ Aktif via VIP Code <span class="excomp-badge badge-green">gs8v</span></span>
+          </div>
+          <div class="excomp-row">
+            <span class="excomp-label">CASHBACK</span>
+            <span class="excomp-val green">✓ Rebate fee trading aktif</span>
+          </div>
+          <div class="excomp-row">
+            <span class="excomp-label">SPREAD</span>
+            <span class="excomp-val">Ultra-ketat, ideal scalping</span>
+          </div>
+          <div class="excomp-row">
+            <span class="excomp-label">PLATFORM</span>
+            <span class="excomp-val">Stabil, cocok untuk HFT ringan</span>
+          </div>
+          <div class="excomp-row">
+            <span class="excomp-label">PASANGAN TRADING</span>
+            <span class="excomp-val">200+ pair Spot & Futures</span>
+          </div>
+          <div class="excomp-row">
+            <span class="excomp-label">KEUNGGULAN</span>
+            <span class="excomp-val green">Leverage besar + bonus = modal efisien</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- WHO SHOULD USE -->
+    <div class="section-label" style="margin-bottom:16px">// cocok untuk siapa?</div>
+    <div class="who-grid">
+      <div class="who-card bybit-who">
+        <div class="who-title">🔷 <span>Gunakan BYBIT jika kamu:</span></div>
+        <div class="who-list">
+          <div class="who-item"><span class="who-check">✦</span><span>Swing trader atau position trader dengan hold 1–7 hari</span></div>
+          <div class="who-item"><span class="who-check">✦</span><span>Trading BTC, ETH, atau altcoin major dengan posisi besar</span></div>
+          <div class="who-item"><span class="who-check">✦</span><span>Mengikuti setup dari laporan institusional 369 GLOBAL</span></div>
+          <div class="who-item"><span class="who-check">✦</span><span>Butuh platform yang stabil dan terpercaya jangka panjang</span></div>
+          <div class="who-item"><span class="who-check">✦</span><span>Mau manfaatkan copy trading dari signal terverifikasi</span></div>
+        </div>
+      </div>
+      <div class="who-card weex-who">
+        <div class="who-title">🟢 <span>Gunakan WEEX jika kamu:</span></div>
+        <div class="who-list">
+          <div class="who-item"><span class="who-check">✦</span><span>Scalper atau intraday trader yang butuh eksekusi ultra-cepat</span></div>
+          <div class="who-item"><span class="who-check">✦</span><span>Mau maksimalkan leverage tinggi dengan modal lebih kecil</span></div>
+          <div class="who-item"><span class="who-check">✦</span><span>Ingin bonus deposit dan cashback aktif dari hari pertama</span></div>
+          <div class="who-item"><span class="who-check">✦</span><span>Trader agresif yang nyaman dengan risk management ketat</span></div>
+          <div class="who-item"><span class="who-check">✦</span><span>Diversifikasi exchange agar tidak bergantung satu platform</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUPER ANALISIS QUOTE -->
+    <div class="analisis-note">
+      <div class="analisis-quote">
+        SETUP KAMI SUDAH DIDESAIN<br>
+        AGAR <em>OPTIMAL DI KEDUA PLATFORM</em> INI.
+      </div>
+      <p class="analisis-sub">
+        Setiap analisis yang dikirim 369 GLOBAL — baik laporan mingguan BTC maupun sinyal altcoin —
+        sudah mempertimbangkan <strong style="color:var(--text)">kondisi likuiditas Bybit</strong> dan
+        <strong style="color:#00C37A">kecepatan eksekusi WEEX.</strong>
+        Artinya, kamu tidak perlu pusing cari exchange sendiri.
+        Daftar lewat link kami, eksekusi setup kami, dan biarkan data berbicara.
+      </p>
+      <div class="analisis-tags">
+        <span class="analisis-tag teal-tag">SMC / ICT ANALYSIS</span>
+        <span class="analisis-tag gold-tag">ON-CHAIN INTELLIGENCE</span>
+        <span class="analisis-tag" style="background:rgba(0,195,122,0.1);color:#00C37A;border:1px solid rgba(0,195,122,0.3);">WYCKOFF FRAMEWORK</span>
+        <span class="analisis-tag" style="background:rgba(0,212,255,0.1);color:var(--cyan);border:1px solid rgba(0,212,255,0.3);">DERIVATIVES DATA</span>
+        <span class="analisis-tag gold-tag">PROBABILISTIC SCENARIO</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXCHANGES — Bybit & WEEX -->
 <section class="exchanges-section" id="exchanges">
   <div class="container">
     <div class="section-label">// pilih exchange kamu</div>
@@ -2051,52 +1749,44 @@
     <div class="exchange-cards">
 
       <!-- BYBIT -->
-      <div class="exchange-card bybit">
-        <div class="exchange-name">BYBIT</div>
-        <div class="exchange-tag">🔷 GLOBAL · RECOMMENDED</div>
+      <a href="https://partner.bybit-global.com/b/369global" target="_blank" class="exchange-card bybit" style="text-decoration:none;">
+        <div class="exchange-logo-wrap">
+          <div class="exchange-logo-icon">🔷</div>
+          <div class="exchange-name">BYBIT</div>
+        </div>
+        <div class="exchange-tag">GLOBAL · RECOMMENDED</div>
         <ul class="exchange-features">
           <li>Zero Fee Trading</li>
           <li>Cocok untuk Futures &amp; Spot</li>
           <li>Interface paling clean &amp; cepat</li>
           <li>Likuiditas tinggi, spread ketat</li>
+          <li>Bonus welcome deposit tersedia</li>
         </ul>
-        <a href="https://partner.bybit-global.com/b/369global" target="_blank" class="exchange-btn">
+        <div class="exchange-btn">
           <span>DAFTAR BYBIT SEKARANG</span>
           <span>→</span>
-        </a>
-      </div>
+        </div>
+      </a>
 
-      <!-- MEXC -->
-      <div class="exchange-card mexc">
-        <div class="exchange-name">MEXC</div>
-        <div class="exchange-tag">🔶 GLOBAL · ALTCOIN HUNTER</div>
+      <!-- WEEX -->
+      <a href="https://www.weex.com/en/register?vipCode=gs8v" target="_blank" class="exchange-card weex" style="text-decoration:none;">
+        <div class="exchange-logo-wrap">
+          <div class="exchange-logo-icon">🟢</div>
+          <div class="exchange-name">WEEX</div>
+        </div>
+        <div class="exchange-tag">GLOBAL · HIGH LEVERAGE PRO</div>
         <ul class="exchange-features">
-          <li>Listing altcoin terlengkap</li>
-          <li>Cocok untuk early gem hunting</li>
-          <li>Fee kompetitif &amp; low minimum</li>
-          <li>Spot &amp; Futures tersedia</li>
+          <li>Leverage hingga 200x tersedia</li>
+          <li>Spread ultra-ketat, eksekusi cepat</li>
+          <li>Bonus deposit & cashback aktif</li>
+          <li>Spot & Futures tersedia</li>
+          <li>Platform stabil, cocok scalping</li>
         </ul>
-        <a href="https://www.mexc.fm/id-ID/acquisition/custom-sign-up?shareCode=mexc-1JoSs" target="_blank" class="exchange-btn">
-          <span>DAFTAR MEXC SEKARANG</span>
+        <div class="exchange-btn">
+          <span>DAFTAR WEEX SEKARANG</span>
           <span>→</span>
-        </a>
-      </div>
-
-      <!-- XT -->
-      <div class="exchange-card xt">
-        <div class="exchange-name">XT.COM</div>
-        <div class="exchange-tag">⚡ BERKEMBANG CEPAT</div>
-        <ul class="exchange-features">
-          <li>Exchange berkembang pesat</li>
-          <li>Early listing peluang tinggi</li>
-          <li>Spot &amp; Futures tersedia</li>
-          <li>Alternatif diversifikasi exchange</li>
-        </ul>
-        <a href="https://www.xt.com/en/accounts/register?ref=SN9FI7" target="_blank" class="exchange-btn">
-          <span>DAFTAR XT.COM SEKARANG</span>
-          <span>→</span>
-        </a>
-      </div>
+        </div>
+      </a>
 
     </div>
 
@@ -2116,7 +1806,7 @@
         <div class="step-num">1</div>
         <div class="step-content">
           <div class="step-title">Pilih Exchange</div>
-          <p class="step-desc">Pilih Bybit atau MEXC di atas sesuai kebutuhan trading kamu. Bisa daftar keduanya untuk akses VIP lebih luas.</p>
+          <p class="step-desc">Pilih Bybit atau WEEX di atas sesuai kebutuhan trading kamu. Bisa daftar keduanya untuk akses VIP lebih luas.</p>
         </div>
       </div>
       <div class="step-item">
@@ -2170,17 +1860,14 @@
         <div class="confirm-content">
           <div class="confirm-title">Sudah Registrasi & Deposit? Konfirmasi Sekarang!</div>
           <p class="confirm-desc">Kirim pesan ini langsung ke admin. Copy teks di bawah, paste ke Telegram, VIP kamu aktif dalam hitungan menit.</p>
-
-          <!-- COPY MESSAGE BOX -->
           <div class="copy-msg-box" id="copyBox">
             <div class="copy-msg-label">TEMPLATE KONFIRMASI — KLIK UNTUK COPY</div>
-            <div class="copy-msg-text" id="msgText">Min, saya sudah registrasi via <strong>[Bybit / MEXC / XT.COM]</strong> menggunakan link resmi 369 Global, KYC sudah selesai, dan deposit sudah siap. Mohon aktifkan akses VIP saya. Terima kasih! 🙏</div>
+            <div class="copy-msg-text" id="msgText">Min, saya sudah registrasi via <strong>[Bybit / WEEX]</strong> menggunakan link resmi 369 Global, KYC sudah selesai, dan deposit sudah siap. Mohon aktifkan akses VIP saya. Terima kasih! 🙏</div>
             <button class="copy-btn" onclick="copyMsg()">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
               <span id="copyLabel">Copy Pesan</span>
             </button>
           </div>
-
           <a href="https://t.me/arttrading369" target="_blank" class="confirm-btn" style="margin-top:16px;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.04 9.613c-.148.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.48 14.617l-2.95-.924c-.641-.2-.653-.641.136-.949l11.532-4.448c.533-.194 1.001.13.364.952z"/></svg>
             Chat Admin — @arttrading369
@@ -2189,7 +1876,6 @@
         <div class="confirm-badge">VIP<br>AKTIF<br>CEPAT</div>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -2201,8 +1887,7 @@
     <p class="cta-sub">Daftar via exchange pilihanmu — VIP langsung aktif seumur hidup.</p>
     <div class="cta-buttons">
       <a href="https://partner.bybit-global.com/b/369global" target="_blank" class="btn-primary">🔷 Bybit</a>
-      <a href="https://www.mexc.fm/id-ID/acquisition/custom-sign-up?shareCode=mexc-1JoSs" target="_blank" class="btn-outline">🔶 MEXC</a>
-      <a href="https://www.xt.com/en/accounts/register?ref=SN9FI7" target="_blank" class="btn-outline" style="border-color:rgba(255,165,0,0.4);color:#FFA500;">⚡ XT.COM</a>
+      <a href="https://www.weex.com/en/register?vipCode=gs8v" target="_blank" class="btn-outline" style="border-color:rgba(0,195,122,0.4);color:#00C37A;">🟢 WEEX</a>
       <a href="https://t.me/arttrading369" target="_blank" class="btn-outline" style="border-color:rgba(0,212,255,0.4);color:var(--cyan);">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.04 9.613c-.148.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.48 14.617l-2.95-.924c-.641-.2-.653-.641.136-.949l11.532-4.448c.533-.194 1.001.13.364.952z"/></svg>
         Konfirmasi Admin
@@ -2217,18 +1902,16 @@
   <p class="footer-text">trading everyday with 369 SUPER ANALISIS VIP EXCLUSIVE · @arttrading369</p>
 </footer>
 
-<!-- FLOATING CTA -->
+<!-- FLOATING CTA — XT removed -->
 <div class="floating-cta" id="floatingCta">
   <span class="floating-label">VIP Gratis →</span>
   <a href="https://partner.bybit-global.com/b/369global" target="_blank" class="floating-btn">🔷 Bybit</a>
-  <a href="https://www.mexc.fm/id-ID/acquisition/custom-sign-up?shareCode=mexc-1JoSs" target="_blank" class="floating-btn-2">🔶 MEXC</a>
-  <a href="https://www.xt.com/en/accounts/register?ref=SN9FI7" target="_blank" class="floating-btn-2" style="background:rgba(255,165,0,0.12);color:#FFA500;border-color:rgba(255,165,0,0.35);">⚡ XT</a>
+  <a href="https://www.weex.com/en/register?vipCode=gs8v" target="_blank" class="floating-btn-2" style="background:rgba(0,195,122,0.15);color:#00C37A;border-color:rgba(0,195,122,0.35);">🟢 WEEX</a>
 </div>
 
 <script>
-  // Copy confirmation message
   function copyMsg() {
-    const text = 'Min, saya sudah registrasi via [Bybit / MEXC / XT.COM] menggunakan link resmi 369 Global, KYC sudah selesai, dan deposit sudah siap. Mohon aktifkan akses VIP saya. Terima kasih! 🙏';
+    const text = 'Min, saya sudah registrasi via [Bybit / WEEX] menggunakan link resmi 369 Global, KYC sudah selesai, dan deposit sudah siap. Mohon aktifkan akses VIP saya. Terima kasih! 🙏';
     navigator.clipboard.writeText(text).then(() => {
       const btn = document.querySelector('.copy-btn');
       const label = document.getElementById('copyLabel');
@@ -2241,43 +1924,21 @@
     });
   }
 
-  // Floating CTA appear on scroll
   const floatingCta = document.getElementById('floatingCta');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) {
-      floatingCta.classList.add('show');
-    } else {
-      floatingCta.classList.remove('show');
-    }
+    floatingCta.classList.toggle('show', window.scrollY > 400);
   });
 
-  // Step items scroll reveal
   const stepItems = document.querySelectorAll('.step-item');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add('visible');
-        }, i * 80);
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
       }
     });
   }, { threshold: 0.1 });
 
   stepItems.forEach(item => observer.observe(item));
-
-  // Animate counters
-  function animateCounter(el, target, suffix = '') {
-    let start = 0;
-    const duration = 1500;
-    const step = (timestamp) => {
-      if (!start) start = timestamp;
-      const progress = Math.min((timestamp - start) / duration, 1);
-      const value = Math.floor(progress * target);
-      el.textContent = value + suffix;
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }
 </script>
 </body>
 </html>
