@@ -328,13 +328,13 @@
   /* TWO-column grid now that XT is removed */
   .exchange-cards {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
-    max-width: 860px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    max-width: 1060px;
     margin: 0 auto;
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 860px) {
     .exchange-cards { grid-template-columns: 1fr; }
   }
 
@@ -893,12 +893,12 @@
   /* Exchange comparison cards */
   .exchange-compare-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     margin-bottom: 40px;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 900px) {
     .exchange-compare-grid { grid-template-columns: 1fr; }
   }
 
@@ -1027,12 +1027,12 @@
   /* Who should use */
   .who-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     margin-bottom: 40px;
   }
 
-  @media (max-width: 700px) { .who-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 900px) { .who-grid { grid-template-columns: 1fr; } }
 
   .who-card {
     background: var(--bg2);
@@ -1123,6 +1123,63 @@
     border-radius: 2px;
   }
 
+
+  .exchange-card.mexc {
+    background: linear-gradient(135deg, #0D1117 0%, #131920 100%);
+    border: 2px solid rgba(0,212,255,0.4);
+  }
+
+  .exchange-card.mexc:hover  { box-shadow: 0 24px 64px rgba(0,212,255,0.15); }
+  .exchange-card.mexc .exchange-logo-icon {
+    filter: drop-shadow(0 0 16px rgba(0,212,255,0.35));
+  }
+  .exchange-card.mexc  .exchange-name { color: var(--cyan); }
+  .exchange-card.mexc .exchange-features li::before { color: var(--cyan); }
+  .exchange-card.mexc .exchange-btn {
+    background: var(--cyan);
+    color: #080B0F;
+  }
+  .exchange-card.mexc .exchange-btn:hover { background: #33DDFF; box-shadow: 0 6px 24px rgba(0,212,255,0.35); }
+  .exchange-card.mexc::before  { background: linear-gradient(90deg, var(--cyan), transparent); }
+
+
+  .excomp-card.mexc-comp {
+    background: linear-gradient(160deg, rgba(13,17,23,1) 0%, rgba(0,20,40,0.6) 100%);
+    border: 1px solid rgba(0,212,255,0.35);
+  }
+  .excomp-card.mexc-comp::before { background: linear-gradient(90deg, var(--cyan), transparent); }
+  .mexc-comp .excomp-name { color: var(--cyan); }
+  .mexc-comp .excomp-verdict {
+    background: rgba(0,212,255,0.07);
+    color: #5AD4F0;
+    border-left: 3px solid var(--cyan);
+  }
+  .excomp-val.cyan { color: var(--cyan); font-weight: 600; }
+  .badge-cyan { background: rgba(0,212,255,0.15); color: var(--cyan); border: 1px solid rgba(0,212,255,0.3); }
+
+
+  .who-card.mexc-who .who-title { color: var(--cyan); }
+  .mexc-who .who-check { color: var(--cyan); }
+
+
+  .exchange-card.mexc {
+    background: linear-gradient(135deg, #0D1117 0%, #131920 100%);
+    border: 2px solid rgba(0,212,255,0.4);
+  }
+
+  .exchange-card.mexc:hover { box-shadow: 0 24px 64px rgba(0,212,255,0.15); }
+  .exchange-card.mexc .exchange-logo-icon {
+    filter: drop-shadow(0 0 16px rgba(0,212,255,0.35));
+  }
+  .exchange-card.mexc  .exchange-name { color: var(--cyan); }
+  .exchange-card.mexc .exchange-features li::before { color: var(--cyan); }
+  .exchange-card.mexc .exchange-btn {
+    background: var(--cyan);
+    color: #080B0F;
+  }
+  .exchange-card.mexc .exchange-btn:hover { background: #33DDFF; box-shadow: 0 6px 24px rgba(0,212,255,0.35); }
+  .exchange-card.mexc::before  { background: linear-gradient(90deg, var(--cyan), transparent); }
+
 </style>
 </head>
 <body>
@@ -1140,6 +1197,8 @@
     <span class="ticker-item">ETH <span class="up">▲ +1.8%</span></span>
     <span class="ticker-item">VIP GRATIS <span>100%</span></span>
     <span class="ticker-item">BYBIT REFERRAL <span>AKTIF</span></span>
+    <span class="ticker-item">MEXC REFERRAL <span>AKTIF</span></span>
+    <span class="ticker-item">MEXC REFERRAL <span>AKTIF</span></span>
     <span class="ticker-item">WEEX REFERRAL <span>AKTIF</span></span>
     <span class="ticker-item">FUTURES SETUP <span>SMC/ICT</span></span>
     <span class="ticker-item">ON-CHAIN <span>LIVE</span></span>
@@ -1149,6 +1208,9 @@
     <span class="ticker-item">ETH <span class="up">▲ +1.8%</span></span>
     <span class="ticker-item">VIP GRATIS <span>100%</span></span>
     <span class="ticker-item">BYBIT REFERRAL <span>AKTIF</span></span>
+    <span class="ticker-item">MEXC REFERRAL <span>AKTIF</span></span>
+    <span class="ticker-item">MEXC REFERRAL <span>AKTIF</span></span>
+    <span class="ticker-item">MEXC REFERRAL <span>AKTIF</span></span>
     <span class="ticker-item">WEEX REFERRAL <span>AKTIF</span></span>
     <span class="ticker-item">FUTURES SETUP <span>SMC/ICT</span></span>
     <span class="ticker-item">ON-CHAIN <span>LIVE</span></span>
@@ -1184,7 +1246,7 @@
       <span class="stat-label">Langkah Daftar</span>
     </div>
     <div class="stat-item">
-      <span class="stat-num">2</span>
+      <span class="stat-num">3</span>
       <span class="stat-label">Exchange Pilihan</span>
     </div>
     <div class="stat-item">
@@ -1591,7 +1653,7 @@
     </p>
 
     <!-- EXCHANGE COMPARISON -->
-    <div class="exchange-compare-grid">
+    <div class="exchange-compare-grid" style="grid-template-columns:repeat(3,1fr);">
 
       <!-- BYBIT -->
       <div class="excomp-card bybit-comp">
@@ -1637,6 +1699,75 @@
           <div class="excomp-row">
             <span class="excomp-label">KEUNGGULAN</span>
             <span class="excomp-val gold">Slippage minimal di posisi besar</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEXC -->
+      <a href="https://www.mexc.fm/id-ID/acquisition/custom-sign-up?shareCode=mexc-1JoSs" target="_blank" class="exchange-card mexc" style="text-decoration:none;">
+        <div class="exchange-logo-wrap">
+          <div class="exchange-logo-icon">🔶</div>
+          <div class="exchange-name">MEXC</div>
+        </div>
+        <div class="exchange-tag">GLOBAL · ALTCOIN HUNTER</div>
+        <ul class="exchange-features">
+          <li>Listing altcoin terlengkap</li>
+          <li>Cocok untuk early gem hunting</li>
+          <li>Fee kompetitif &amp; low minimum</li>
+          <li>Spot &amp; Futures tersedia</li>
+          <li>1000+ altcoin listing aktif</li>
+        </ul>
+        <div class="exchange-btn">
+          <span>DAFTAR MEXC SEKARANG</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- MEXC -->
+      <div class="excomp-card" style="background:linear-gradient(160deg,rgba(13,17,23,1) 0%,rgba(0,25,40,0.6) 100%);border:1px solid rgba(0,212,255,0.3);position:relative;overflow:hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--cyan),transparent);"></div>
+        <div class="excomp-header">
+          <div class="excomp-icon">🔶</div>
+          <div>
+            <div class="excomp-name" style="color:var(--cyan);">MEXC</div>
+            <div class="excomp-tagline">ALTCOIN SPECIALIST · LISTING TERLUAS</div>
+          </div>
+        </div>
+        <div class="excomp-verdict" style="background:rgba(0,212,255,0.08);color:#5BC8E8;border-left:3px solid var(--cyan);">
+          "Exchange terbaik untuk berburu altcoin early. 1500+ listing aktif dengan fee spot 0% — ideal untuk gem hunting sebelum token pump."
+        </div>
+        <div class="excomp-rows">
+          <div class="excomp-row">
+            <span class="excomp-label">FEE SPOT</span>
+            <span class="excomp-val" style="color:var(--cyan);font-weight:600;">0% <span class="excomp-badge" style="background:rgba(0,212,255,0.15);color:var(--cyan);border:1px solid rgba(0,212,255,0.3);">GRATIS</span></span>
+          </div>
+          <div class="excomp-row">
+            <span class="excomp-label">LISTING ALTCOIN</span>
+            <span class="excomp-val" style="color:var(--cyan);font-weight:600;">1500+ <span class="excomp-badge" style="background:rgba(0,212,255,0.15);color:var(--cyan);border:1px solid rgba(0,212,255,0.3);">TERLENGKAP</span></span>
+          </div>
+          <div class="excomp-row">
+            <span class="excomp-label">LEVERAGE MAX</span>
+            <span class="excomp-val">200x Futures</span>
+          </div>
+          <div class="excomp-row">
+            <span class="excomp-label">EARLY LISTING</span>
+            <span class="excomp-val" style="color:var(--cyan);">✓ Tercepat di industri</span>
+          </div>
+          <div class="excomp-row">
+            <span class="excomp-label">MINIMUM DEPOSIT</span>
+            <span class="excomp-val">Sangat rendah, mulai $1</span>
+          </div>
+          <div class="excomp-row">
+            <span class="excomp-label">BONUS</span>
+            <span class="excomp-val" style="color:var(--cyan);">✓ Welcome bonus aktif</span>
+          </div>
+          <div class="excomp-row">
+            <span class="excomp-label">COCOK UNTUK</span>
+            <span class="excomp-val" style="color:var(--cyan);">Spot + gem hunting</span>
+          </div>
+          <div class="excomp-row">
+            <span class="excomp-label">KEUNGGULAN</span>
+            <span class="excomp-val" style="color:var(--cyan);">Fee 0% spot = profit lebih besar</span>
           </div>
         </div>
       </div>
@@ -1693,7 +1824,7 @@
 
     <!-- WHO SHOULD USE -->
     <div class="section-label" style="margin-bottom:16px">// cocok untuk siapa?</div>
-    <div class="who-grid">
+    <div class="who-grid" style="grid-template-columns:repeat(3,1fr);">
       <div class="who-card bybit-who">
         <div class="who-title">🔷 <span>Gunakan BYBIT jika kamu:</span></div>
         <div class="who-list">
@@ -1704,6 +1835,27 @@
           <div class="who-item"><span class="who-check">✦</span><span>Mau manfaatkan copy trading dari signal terverifikasi</span></div>
         </div>
       </div>
+      <div class="who-card mexc-who">
+        <div class="who-title">🔶 <span>Gunakan MEXC jika kamu:</span></div>
+        <div class="who-list">
+          <div class="who-item"><span class="who-check">✦</span><span>Pemburu altcoin early-stage sebelum listing di exchange besar</span></div>
+          <div class="who-item"><span class="who-check">✦</span><span>Mau masuk posisi spot altcoin dengan fee 0% maker</span></div>
+          <div class="who-item"><span class="who-check">✦</span><span>Ikuti sinyal altcoin 369 GLOBAL yang sering listing pertama di MEXC</span></div>
+          <div class="who-item"><span class="who-check">✦</span><span>Pemula dengan modal kecil — minimum deposit sangat rendah</span></div>
+          <div class="who-item"><span class="who-check">✦</span><span>Diversifikasi ke altcoin mid-cap yang belum ada di Bybit/WEEX</span></div>
+        </div>
+      </div>
+      <div class="who-card" style="background:var(--bg2);border:1px solid rgba(0,212,255,0.2);border-radius:6px;padding:24px;">
+        <div class="who-title" style="color:var(--cyan);font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;margin-bottom:14px;display:flex;align-items:center;gap:10px;">🔶 <span>Gunakan MEXC jika kamu:</span></div>
+        <div class="who-list">
+          <div class="who-item"><span style="color:var(--cyan);flex-shrink:0;margin-top:1px;font-size:11px;">✦</span><span>Berburu altcoin early sebelum listing di exchange besar</span></div>
+          <div class="who-item"><span style="color:var(--cyan);flex-shrink:0;margin-top:1px;font-size:11px;">✦</span><span>Mau trading spot tanpa bayar fee sama sekali (0%)</span></div>
+          <div class="who-item"><span style="color:var(--cyan);flex-shrink:0;margin-top:1px;font-size:11px;">✦</span><span>Mulai dengan modal kecil — minimum deposit sangat rendah</span></div>
+          <div class="who-item"><span style="color:var(--cyan);flex-shrink:0;margin-top:1px;font-size:11px;">✦</span><span>Ingin akses 1500+ token yang belum ada di Bybit/WEEX</span></div>
+          <div class="who-item"><span style="color:var(--cyan);flex-shrink:0;margin-top:1px;font-size:11px;">✦</span><span>Diversifikasi portofolio dengan altcoin kapitalisasi kecil</span></div>
+        </div>
+      </div>
+
       <div class="who-card weex-who">
         <div class="who-title">🟢 <span>Gunakan WEEX jika kamu:</span></div>
         <div class="who-list">
@@ -1724,7 +1876,8 @@
       </div>
       <p class="analisis-sub">
         Setiap analisis yang dikirim 369 GLOBAL — baik laporan mingguan BTC maupun sinyal altcoin —
-        sudah mempertimbangkan <strong style="color:var(--text)">kondisi likuiditas Bybit</strong> dan
+        sudah mempertimbangkan <strong style="color:var(--gold)">likuiditas Bybit</strong>,
+        <strong style="color:var(--cyan)">altcoin listing MEXC</strong>, dan
         <strong style="color:#00C37A">kecepatan eksekusi WEEX.</strong>
         Artinya, kamu tidak perlu pusing cari exchange sendiri.
         Daftar lewat link kami, eksekusi setup kami, dan biarkan data berbicara.
@@ -1768,6 +1921,46 @@
         </div>
       </a>
 
+      <!-- MEXC -->
+      <a href="https://www.mexc.fm/id-ID/acquisition/custom-sign-up?shareCode=mexc-1JoSs" target="_blank" class="exchange-card mexc" style="text-decoration:none;">
+        <div class="exchange-logo-wrap">
+          <div class="exchange-logo-icon">🔶</div>
+          <div class="exchange-name">MEXC</div>
+        </div>
+        <div class="exchange-tag">GLOBAL · ALTCOIN HUNTER</div>
+        <ul class="exchange-features">
+          <li>2000+ altcoin listing terlengkap</li>
+          <li>0% fee maker — spot gratis</li>
+          <li>Early gem sebelum exchange lain</li>
+          <li>Spot &amp; Futures tersedia</li>
+          <li>Minimum deposit sangat rendah</li>
+        </ul>
+        <div class="exchange-btn">
+          <span>DAFTAR MEXC SEKARANG</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- MEXC -->
+      <a href="https://www.mexc.fm/id-ID/acquisition/custom-sign-up?shareCode=mexc-1JoSs" target="_blank" class="exchange-card mexc" style="text-decoration:none;">
+        <div class="exchange-logo-wrap">
+          <div class="exchange-logo-icon">🔶</div>
+          <div class="exchange-name">MEXC</div>
+        </div>
+        <div class="exchange-tag">GLOBAL · ALTCOIN HUNTER</div>
+        <ul class="exchange-features">
+          <li>Listing altcoin terlengkap</li>
+          <li>Cocok untuk early gem hunting</li>
+          <li>Fee kompetitif &amp; low minimum</li>
+          <li>Spot &amp; Futures tersedia</li>
+          <li>1000+ altcoin listing aktif</li>
+        </ul>
+        <div class="exchange-btn">
+          <span>DAFTAR MEXC SEKARANG</span>
+          <span>→</span>
+        </div>
+      </a>
+
       <!-- WEEX -->
       <a href="https://www.weex.com/en/register?vipCode=gs8v" target="_blank" class="exchange-card weex" style="text-decoration:none;">
         <div class="exchange-logo-wrap">
@@ -1806,7 +1999,7 @@
         <div class="step-num">1</div>
         <div class="step-content">
           <div class="step-title">Pilih Exchange</div>
-          <p class="step-desc">Pilih Bybit atau WEEX di atas sesuai kebutuhan trading kamu. Bisa daftar keduanya untuk akses VIP lebih luas.</p>
+          <p class="step-desc">Pilih Bybit, MEXC, atau WEEX di atas sesuai kebutuhan trading kamu. Bisa daftar lebih dari satu untuk akses VIP lebih luas.</p>
         </div>
       </div>
       <div class="step-item">
@@ -1862,7 +2055,7 @@
           <p class="confirm-desc">Kirim pesan ini langsung ke admin. Copy teks di bawah, paste ke Telegram, VIP kamu aktif dalam hitungan menit.</p>
           <div class="copy-msg-box" id="copyBox">
             <div class="copy-msg-label">TEMPLATE KONFIRMASI — KLIK UNTUK COPY</div>
-            <div class="copy-msg-text" id="msgText">Min, saya sudah registrasi via <strong>[Bybit / WEEX]</strong> menggunakan link resmi 369 Global, KYC sudah selesai, dan deposit sudah siap. Mohon aktifkan akses VIP saya. Terima kasih! 🙏</div>
+            <div class="copy-msg-text" id="msgText">Min, saya sudah registrasi via <strong>[Bybit / MEXC / WEEX]</strong> menggunakan link resmi 369 Global, KYC sudah selesai, dan deposit sudah siap. Mohon aktifkan akses VIP saya. Terima kasih! 🙏</div>
             <button class="copy-btn" onclick="copyMsg()">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
               <span id="copyLabel">Copy Pesan</span>
@@ -1887,6 +2080,8 @@
     <p class="cta-sub">Daftar via exchange pilihanmu — VIP langsung aktif seumur hidup.</p>
     <div class="cta-buttons">
       <a href="https://partner.bybit-global.com/b/369global" target="_blank" class="btn-primary">🔷 Bybit</a>
+      <a href="https://www.mexc.fm/id-ID/acquisition/custom-sign-up?shareCode=mexc-1JoSs" target="_blank" class="btn-outline">🔶 MEXC</a>
+      <a href="https://www.mexc.fm/id-ID/acquisition/custom-sign-up?shareCode=mexc-1JoSs" target="_blank" class="btn-outline" style="border-color:rgba(0,212,255,0.4);color:var(--cyan);">🔶 MEXC</a>
       <a href="https://www.weex.com/en/register?vipCode=gs8v" target="_blank" class="btn-outline" style="border-color:rgba(0,195,122,0.4);color:#00C37A;">🟢 WEEX</a>
       <a href="https://t.me/arttrading369" target="_blank" class="btn-outline" style="border-color:rgba(0,212,255,0.4);color:var(--cyan);">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.04 9.613c-.148.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.48 14.617l-2.95-.924c-.641-.2-.653-.641.136-.949l11.532-4.448c.533-.194 1.001.13.364.952z"/></svg>
@@ -1906,12 +2101,14 @@
 <div class="floating-cta" id="floatingCta">
   <span class="floating-label">VIP Gratis →</span>
   <a href="https://partner.bybit-global.com/b/369global" target="_blank" class="floating-btn">🔷 Bybit</a>
+  <a href="https://www.mexc.fm/id-ID/acquisition/custom-sign-up?shareCode=mexc-1JoSs" target="_blank" class="floating-btn-2">🔶 MEXC</a>
+  <a href="https://www.mexc.fm/id-ID/acquisition/custom-sign-up?shareCode=mexc-1JoSs" target="_blank" class="floating-btn-2">🔶 MEXC</a>
   <a href="https://www.weex.com/en/register?vipCode=gs8v" target="_blank" class="floating-btn-2" style="background:rgba(0,195,122,0.15);color:#00C37A;border-color:rgba(0,195,122,0.35);">🟢 WEEX</a>
 </div>
 
 <script>
   function copyMsg() {
-    const text = 'Min, saya sudah registrasi via [Bybit / WEEX] menggunakan link resmi 369 Global, KYC sudah selesai, dan deposit sudah siap. Mohon aktifkan akses VIP saya. Terima kasih! 🙏';
+    const text = 'Min, saya sudah registrasi via [Bybit / MEXC / WEEX] menggunakan link resmi 369 Global, KYC sudah selesai, dan deposit sudah siap. Mohon aktifkan akses VIP saya. Terima kasih! 🙏';
     navigator.clipboard.writeText(text).then(() => {
       const btn = document.querySelector('.copy-btn');
       const label = document.getElementById('copyLabel');
